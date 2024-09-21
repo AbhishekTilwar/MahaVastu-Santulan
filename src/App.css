@@ -178,8 +178,8 @@ img{
 .nav_icon{
   width:"40px";
 }
-@media screen and (max-width: 768px) {
-  .nav__menu {
+@media screen and (max-width: 768px){
+  .nav__menu{
     position: fixed;
     top: -100%;
     left: 0;
@@ -188,22 +188,42 @@ img{
     text-align: center;
     background-color: var(--body-color);
     transition: .4s;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 4px 4px rgba(0,0,0,.1);
     border-radius: 0 0 1rem 1rem;
     z-index: var(--z-fixed);
     transform: translateY(-20px);
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+  
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   }
+
 
   .nav__menu.show-menu {
     top: 60px; /* Adjust this value to move it down */
+
     max-height: 300px; /* Adjust based on your menu size */
     opacity: 1;
     transform: translateY(0);
   }
 
+  .nav__item {
+    margin-top: 18px;
+    margin: 0.5rem 0;
+    opacity: 0;
+
+    transition: opacity 0.15s ease-in-out;
+    transform: 0.3s ease-in-out;
+  
+  }
+  .nav__item.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .nav__menu.show-menu .nav__item {
+    opacity: 1;
+  }
   .nav{
     max-width: 100%;
     margin-left: 10px;
@@ -245,10 +265,14 @@ img{
   
 }
 
-.nav__item{
-  margin-top: 8px;
 
+.nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+
 
 .nav__link, .nav__logo, .nav__toggle{
   color: var(--text-color);

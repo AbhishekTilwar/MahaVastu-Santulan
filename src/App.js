@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Switch } from 'antd';
 import './App.css'; 
-import logo from './assets/img/logo.svg'; // Adjust the path based on your folder structure
+import logo from './assets/img/logo_icon.svg'; // Adjust the path based on your folder structure
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { MenuOutlined } from '@ant-design/icons';  // Import Ant Design Icon
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { motion, useAnimation } from 'framer-motion';
 
 
@@ -33,7 +33,7 @@ const HomePage = () => {
   }, [darkMode]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const controls = useAnimation();
+ const controls = useAnimation();
   
   const toggleMenu = () => {
     if (isMenuOpen) {
@@ -60,47 +60,51 @@ const HomePage = () => {
         </a>
 
         {/* HEADER */}
-       <header className="l-header" id="header">
-        <nav className="nav bd-container">
-          <a href="index.html">
-            <img className="logo_space" src={logo} width="55px" alt="logo" />
-          </a>
 
-          {/* Navigation Menu */}
-          <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`} id="nav-menu">
-          <ul className="nav__list">
-              <li className="nav__item">
-                <a href="home.html" className="nav__link active-link">Home</a>
-              </li>
-              <li className="nav__item">
-                <a href="Courses.html" className="nav__link">Courses</a>
-              </li>
-              <li className="nav__item">
-                <a href="Internship.html" className="nav__link">Internship</a>
-              </li>
-              <li className="nav__item">
-                <a href="Community.html" className="nav__link">Join Community</a>
-              </li>
-              <li>
-                <Switch
-                  checkedChildren="🌙"
-                  unCheckedChildren="☀️"
-                  checked={darkMode}
-                  onChange={toggleTheme}
-                  id="theme-button"
-                />
-              </li>
-            </ul>
-          </div>
+<header className="l-header" id="header">
+  <nav className="nav bd-container">
+    <a href="index.html">
+      <img className="logo_space" src={logo} width="48px" alt="logo" />
+    </a>
 
-          {/* Hamburger Icon */}
-           {/* AntD Menu Icon */}
-           <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
+    {/* Navigation Menu */}
+    <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`} id="nav-menu">
+      <ul className="nav__list">
+        <li className="nav__item">
+          <a href="home.html" className="nav__link active-link">Home</a>
+        </li>
+        <li className="nav__item">
+          <a href="Courses.html" className="nav__link">Courses</a>
+        </li>
+        <li className="nav__item">
+          <a href="Internship.html" className="nav__link">Internship</a>
+        </li>
+        <li className="nav__item">
+          <a href="Community.html" className="nav__link">Join Community</a>
+        </li>
+        <li>
+          <Switch
+            checkedChildren="🌙"
+            unCheckedChildren="☀️"
+            checked={darkMode}
+            onChange={toggleTheme}
+            id="theme-button"
+          />
+        </li>
+      </ul>
+    </div>
+
+    {/* Hamburger Icon */}
+    <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
+      {isMenuOpen ? (
+        <CloseOutlined style={{ fontSize: '24px', color: '#000' }} />
+      ) : (
         <MenuOutlined style={{ fontSize: '24px', color: '#000' }} />
-      </div>
+      )}
+    </div>
+  </nav>
+</header>
 
-        </nav>
-      </header>
 
         <main className="l-main">
           {/* HOME SECTION */}
