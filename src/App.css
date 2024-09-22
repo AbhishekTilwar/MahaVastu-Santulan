@@ -1287,6 +1287,8 @@ img{
 
 .bd-container-first{
   width: calc(100% - 3rem);
+  margin-top: 42%;
+
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
 
@@ -1294,11 +1296,9 @@ img{
 }
 .bd-container{
   width: calc(100% - 3rem);
-  margin-top: 50%;
+  margin-top: 20%;
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
-
-
 }
 
 

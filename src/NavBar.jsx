@@ -71,13 +71,13 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               <a href="" className="nav__link active-link">Home</a>
             </li>
             <li className="nav__item">
-              <a href="Courses.html" className="nav__link">Courses</a>
+              <a href="Courses.html" className="nav__link">Vastu</a>
             </li>
             <li className="nav__item">
-              <a href="Internship.html" className="nav__link">Internship</a>
+              <a href="Internship.html" className="nav__link">Consultation</a>
             </li>
             <li className="nav__item">
-              <a href="Community.html" className="nav__link">Join Community</a>
+              <a href="Community.html" className="nav__link">Contact Us</a>
             </li>
             <li className="nav__item theme-switcher-container">
               <div className="theme-switcher">

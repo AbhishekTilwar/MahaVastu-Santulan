@@ -1,8 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from 'framer-motion';
+import { Popover, Button } from 'antd';
+import { PhoneOutlined, MessageOutlined, WechatOutlined } from '@ant-design/icons'; // Import Ant Design icons
 import MainGif from './assets/img/Main.gif';
 import NavBar from './NavBar'; // Import the NavBar component
 import Footer from './Footer'; // Import the Footer component
@@ -39,6 +40,18 @@ const App = () => {
     { src: 'assets/img/Vodafone-Logo.png', alt: 'Vodafone' },
   ];
 
+  // Contact options (chat and call)
+  const contactContent = (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Button type="primary" icon={<MessageOutlined />} style={{ marginBottom: '10px' }}>
+        Chat with Us
+      </Button>
+      <Button type="primary" icon={<PhoneOutlined />}>
+        Call Us
+      </Button>
+    </div>
+  );
+
   return (
     <div>
       {isLoading ? (
@@ -49,35 +62,33 @@ const App = () => {
 
           <main className="l-main">
             <section className="home" id="home">
-              <div className="home__container bd-container bd-grid">
+              <div className="home__container bd-container-first bd-grid">
                 <div className="home__data">
                   <h3 className="home__title">MahaVastu Santulan</h3>
                   <h3 className="home__subtitle">The promise to prosperity</h3>
                   <a href="Courses.html" className="button">Consult Us now</a>
                 </div>
                 <div>
-                <img 
-                      src={MainGif} 
-                      alt="Header Image" 
-                      style={{
-                        width: 'auto',
-                        height: 'auto',
-                        objectFit: 'cover',
-                        objectPosition: 'top',
-                        clipPath: 'inset(0 0 10% 0)' // Adjust the 20% value to control how much you crop from the bottom
-                      }}
-                    />
-
-
+                  <img 
+                    src={MainGif} 
+                    alt="Header Image" 
+                    style={{
+                      width: 'auto',
+                      height: 'auto',
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                      clipPath: 'inset(0 0 10% 0)'
+                    }}
+                  />
                 </div>
               </div>
             </section>
 
             <section className="menu section bd-container" id="menu">
-              <h2 className="section-title">Popular Live Courses</h2>
-              <h1 className="section-subtitle">Programming Courses</h1>
+              <h2 className="section-title">Best Vastu Consultant in India  </h2>
+              <h1 className="section-subtitle">Promising Health, Wealth & Prosperity</h1>
               <div className="menu__containers bd-grid">
-                <div className="menu__content">
+                {/* <div className="menu__content">
                   <a href="c_programming_course.html">
                     <img src="assets/img/c.png" alt="C Programming" className="menu__img" />
                     <h3 className="menu__name">C Programming</h3>
@@ -89,13 +100,14 @@ const App = () => {
                     </div>
                     <a href="c_programming_course.html" className="button menu__button_grey">Enroll Now</a>
                   </a>
-                </div>
+                </div> */}
               </div>
             </section>
 
             <div className="sponsors-container">
-              <h2>Our Students are selected in</h2>
-              <motion.div
+              <h2>Effective Vastu Solutions,
+              No Superstition, No Frills, No Demolition</h2>
+              {/* <motion.div
                 className="sponsors-list"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -112,13 +124,42 @@ const App = () => {
                   </motion.div>
                 ))}
               </motion.div>
-              <a href="Community.html">
-                <h2 style={{ color: 'gray' }}>+ much more..</h2>
-              </a>
+              */}
             </div>
           </main>
 
           <Footer /> {/* Use Footer here */}
+
+          <Popover content={contactContent} title="Contact Us" trigger="click">
+  <Button 
+    type="primary" 
+    shape="circle" 
+    icon={<WechatOutlined style={{ fontSize: '26px' }} />}  // Increased icon size
+    style={{ 
+      position: 'fixed', 
+      bottom: '20px', 
+      right: '20px', 
+      zIndex: 1000, 
+      boxShadow: '0 4px 8px rgba(0,0,0,0.2)', 
+      width: '50px',  // Button size
+      height: '50px', // Button size
+      lineHeight: '60px', // Align icon vertically
+      animation: 'blink 4.5s infinite' // Apply blink animation
+    }} 
+  />
+</Popover>
+
+{/* Add this CSS to your App.css or in the same JSX file */}
+<style>
+  {`
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+  `}
+</style>
+
         </>
       )}
     </div>
