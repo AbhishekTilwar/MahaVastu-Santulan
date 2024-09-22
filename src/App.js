@@ -24,6 +24,8 @@ const HomePage = () => {
 
   // useEffect for splash screen
   useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
     // Simulate loading time (e.g., 3 seconds)
     const timer = setTimeout(() => {
       setIsLoading(false); // Hide the splash screen after 3 seconds
@@ -54,6 +56,17 @@ const HomePage = () => {
     setDarkMode(!darkMode);
   };
 
+
+
+  const sponsors = [
+    { src: 'assets/img/sap.png', alt: 'SAP' },
+    { src: 'assets/img/Deloitte-logo.png', alt: 'Deloitte' },
+    { src: 'assets/img/HPE-Logo.png', alt: 'HPE' },
+    { src: 'assets/img/ey.png', alt: 'EY' },
+    { src: 'assets/img/Jio-Logo.png', alt: 'Jio' },
+    { src: 'assets/img/ptc.png', alt: 'PTC' },
+    { src: 'assets/img/Vodafone-Logo.png', alt: 'Vodafone' },
+  ];
   // Return block for rendering - hooks above this are called in every render
   return (
     <div>
@@ -169,13 +182,29 @@ const HomePage = () => {
                 </div>
               </section>
 
-              {/* Sponsors Section */}
               <div className="sponsors-container">
-                <h2>Our Students are selected in</h2>
-                <div className="sponsors-list">
-                  {/* Sponsors logos */}
-                </div>
-              </div>
+      <h2>Our Students are selected in</h2>
+      <motion.div 
+        className="sponsors-list"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {sponsors.map((sponsor, index) => (
+          <motion.div 
+            className="sponsor-item" 
+            key={index}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <img src={sponsor.src} alt={sponsor.alt} />
+          </motion.div>
+        ))}
+      </motion.div>
+      <a href="Community.html">
+        <h2 style={{ color: 'gray' }}>+ much more..</h2>
+      </a>
+    </div>
 
               {/* Footer */}
               <footer className="footer section bd-container">
