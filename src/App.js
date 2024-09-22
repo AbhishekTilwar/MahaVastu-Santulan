@@ -54,6 +54,19 @@ const HomePage = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', closeMenu);
+    return () => {
+      window.removeEventListener('scroll', closeMenu);
+    };
+  }, [isMenuOpen]);
+
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };

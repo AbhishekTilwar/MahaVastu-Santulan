@@ -1126,7 +1126,7 @@ img{
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #fff; /* Optional: Set a background color */
+            background-color: #fefefe; /* Optional: Set a background color */
           }
           
           .splash-logo {
@@ -1234,6 +1234,15 @@ img{
   z-index: 999;
   transform: translateY(-100%);
   transition: all 0.5s ease-in-out;
+}
+
+.splash-screen {
+  display: flex;
+  margin-top: -50px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1D2521; /* Optional: Set a background color */
 }
 
 }
