@@ -1203,6 +1203,7 @@ img{
 }
 
 
+
 @media screen and (max-width: 768px){
 
 .iframe-container_form {
@@ -1244,5 +1245,38 @@ img{
   height: 100vh;
   background-color: #1D2521; /* Optional: Set a background color */
 }
+
+
+.close-icon {
+  font-size: 24px;
+  color: #000;
+  border-radius: 50%; /* Makes the effect circular */
+  padding: 5px; /* Adds space around the icon */
+  box-shadow: 0 0 5px rgba(109, 108, 108, 0.5); /* Adds a shadow effect */
+  background-color: #fefefe; /* Background color */
+  transition: all 0.3s ease; /* Smooth transition for any changes */
+}
+
+.close-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5); /* Light and transparent background */
+  border-radius: 20% 50% 50% 20%; /* Fancy shape */
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* Slightly stronger shadow on hover */
+
+}
+
+.close-icon:hover::before {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow on hover */
+  background: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
+}
+
 
 }
