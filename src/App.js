@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from 'framer-motion';
-
+import MainGif from './assets/img/Main.gif';
 import NavBar from './NavBar'; // Import the NavBar component
 import Footer from './Footer'; // Import the Footer component
 import SplashScreen from './SplashScreen'; // If SplashScreen is also a separate component
 
-const HomePage = () => {
+const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
 
@@ -49,26 +49,26 @@ const HomePage = () => {
 
           <main className="l-main">
             <section className="home" id="home">
-              <div className="home__container bd-container-first bd-grid">
+              <div className="home__container bd-container bd-grid">
                 <div className="home__data">
                   <h3 className="home__title">MahaVastu Santulan</h3>
                   <h3 className="home__subtitle">The promise to prosperity</h3>
                   <a href="Courses.html" className="button">Consult Us now</a>
                 </div>
                 <div>
-                  <div className="laptop">
-                    <div className="content">
-                      <iframe
-                        id="video"
-                        width="98%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/x4SYkYP54WA?autoplay=1"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  </div>
+                <img 
+                      src={MainGif} 
+                      alt="Header Image" 
+                      style={{
+                        width: 'auto',
+                        height: 'auto',
+                        objectFit: 'cover',
+                        objectPosition: 'top',
+                        clipPath: 'inset(0 0 10% 0)' // Adjust the 20% value to control how much you crop from the bottom
+                      }}
+                    />
+
+
                 </div>
               </div>
             </section>
@@ -125,4 +125,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default App;

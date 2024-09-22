@@ -1242,7 +1242,7 @@ img{
 
 .splash-screen {
   display: flex;
-  margin-top: -72px;
+  margin-top: -64px;
   justify-content: center;
   align-items: center;
   height: 100vh;
