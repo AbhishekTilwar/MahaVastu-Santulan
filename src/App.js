@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from 'framer-motion';
-import { Popover, Button } from 'antd';
+import {Tooltip, Popover, Button } from 'antd';
 import { PhoneOutlined, MessageOutlined, WechatOutlined } from '@ant-design/icons'; // Import Ant Design icons
 import MainGif from './assets/img/Main.gif';
 import NavBar from './NavBar'; // Import the NavBar component
@@ -40,15 +40,14 @@ const App = () => {
     { src: 'assets/img/Vodafone-Logo.png', alt: 'Vodafone' },
   ];
 
-  // Contact options (chat and call)
   const contactContent = (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Button type="primary" icon={<MessageOutlined />} style={{ marginBottom: '10px' }}>
-        Chat with Us
-      </Button>
-      <Button type="primary" icon={<PhoneOutlined />}>
-        Call Us
-      </Button>
+      <Tooltip title="Chat with us">
+        <Button type="primary" shape="circle" icon={<MessageOutlined />} style={{ marginBottom: '10px' }} />
+      </Tooltip>
+      <Tooltip title="Call us">
+        <Button type="primary" shape="circle" icon={<PhoneOutlined />} />
+      </Tooltip>
     </div>
   );
 
@@ -66,7 +65,8 @@ const App = () => {
                 <div className="home__data">
                   <h3 className="home__title">MahaVastu Santulan</h3>
                   <h3 className="home__subtitle">The promise to prosperity</h3>
-                  <a href="Courses.html" className="button">Consult Us now</a>
+                  <a href="Courses.html" className="button-consult-mobile">Consult Us now</a>
+
                 </div>
                 <div>
                   <img 
@@ -80,8 +80,16 @@ const App = () => {
                       clipPath: 'inset(0 0 10% 0)'
                     }}
                   />
+ <div className="parent-element">
+    <Button type="primary" shape="round" size="large" href="Courses.html" className="animated-button">
+      Consult Us now
+    </Button>
+  </div>
+
                 </div>
+
               </div>
+
             </section>
 
             <section className="menu section bd-container" id="menu">
@@ -130,7 +138,7 @@ const App = () => {
 
           <Footer /> {/* Use Footer here */}
 
-          <Popover content={contactContent} title="Contact Us" trigger="click">
+          <Popover content={contactContent} title="" trigger="click">
   <Button 
     type="primary" 
     shape="circle" 
