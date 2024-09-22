@@ -143,8 +143,10 @@ const App = () => {
       boxShadow: '0 4px 8px rgba(0,0,0,0.2)', 
       width: '50px',  // Button size
       height: '50px', // Button size
+      backgroundColor:'#ffb401',
+
       lineHeight: '60px', // Align icon vertically
-      animation: 'blink 4.5s infinite' // Apply blink animation
+      animation: 'blink 2.5s infinite' // Apply blink animation
     }} 
   />
 </Popover>
