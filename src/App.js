@@ -29,6 +29,8 @@ const HomePage = () => {
     // Simulate loading time (e.g., 3 seconds)
     const timer = setTimeout(() => {
       setIsLoading(false); // Hide the splash screen after 3 seconds
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+
     }, 3000);
 
     return () => clearTimeout(timer); // Clear timeout if component unmounts
