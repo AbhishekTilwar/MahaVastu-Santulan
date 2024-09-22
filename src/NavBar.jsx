@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Switch } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link
 import logohead from './assets/img/logo_icon.svg'; 
 import { useAnimation, motion } from 'framer-motion';
 
+
 const NavBar = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0); // To track the scroll position
+  const [scrollPosition, setScrollPosition] = useState(0);
   const controls = useAnimation();
 
+  const navigate = useNavigate(); // Change here
+
+  const handleClick = () => {
+    navigate('/splashscreen'); // Change here
+  };
   const toggleMenu = () => {
     if (isMenuOpen) {
       controls.start({ height: 0, opacity: 0 });
@@ -24,7 +31,6 @@ const NavBar = ({ darkMode, setDarkMode }) => {
     }
   };
 
-  // Handle scroll event for header transparency
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
@@ -45,14 +51,13 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 
   return (
     <header 
-    className="l-header" 
-    id="header"
-    style={{
-      backgroundColor: scrollPosition > 50 ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.3)',
-      transition: 'background-color 0.3s ease',
-    }}
-  >
-  
+      className="l-header" 
+      id="header"
+      style={{
+        backgroundColor: scrollPosition > 50 ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.3)',
+        transition: 'background-color 0.3s ease',
+      }}
+    >
       <nav className="nav bd-container_main">
         <motion.div
           className="logo"
@@ -61,42 +66,46 @@ const NavBar = ({ darkMode, setDarkMode }) => {
           transition={{ duration: 1 }}
           whileHover={{ scale: 1.1, rotate: 5 }}
           whileTap={{ scale: 0.9 }}
+          onClick={handleClick}
+
         >
           <img className="logo_space" src={logohead} width="45px" alt="logo" />
         </motion.div>
 
         <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`} id="nav-menu">
-          <ul className="nav__list">
+        <ul className="nav__list">
             <li className="nav__item">
-              <a href="" className="nav__link active-link">Home</a>
+                <Link to="/" className="nav__link active-link" onClick={closeMenu}>Home</Link>
             </li>
             <li className="nav__item">
-              <a href="Courses.html" className="nav__link">Vastu</a>
+                <Link to="/courses" className="nav__link" onClick={closeMenu}>Vastu</Link>
             </li>
             <li className="nav__item">
-              <a href="Internship.html" className="nav__link">Consultation</a>
+                <Link to="/internship" className="nav__link" onClick={closeMenu}>Consultation</Link>
             </li>
             <li className="nav__item">
-              <a href="Community.html" className="nav__link">Contact Us</a>
+                <Link to="/contact" className="nav__link" onClick={closeMenu}>Contact Us</Link>
             </li>
             <li className="nav__item theme-switcher-container">
-              <div className="theme-switcher">
+                <div className="theme-switcher">
                 <motion.div
-                  initial={{ scale: 0.8 }}
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.4 }}
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.1, rotate: 360 }}
+                    transition={{ duration: 0.4 }}
                 >
-                  <Switch
+                    <Switch
                     checkedChildren={<span role="img" aria-label="moon">🌙</span>}
                     unCheckedChildren={<span role="img" aria-label="sun">☀️</span>}
                     checked={darkMode}
                     onChange={toggleTheme}
                     id="theme-button"
-                  />
+                    aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                    />
                 </motion.div>
-              </div>
+                </div>
             </li>
-          </ul>
+            </ul>
+
         </div>
 
         <div className="nav__toggle" onClick={toggleMenu}>

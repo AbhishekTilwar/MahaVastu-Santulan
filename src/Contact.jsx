@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -6,7 +5,6 @@ import { motion } from 'framer-motion';
 
 import NavBar from './NavBar'; // Import the NavBar component
 import Footer from './Footer'; // Import the Footer component
-import SplashScreen from './SplashScreen'; // If SplashScreen is also a separate component
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,19 +39,15 @@ const HomePage = () => {
 
   return (
     <div>
-      {isLoading ? (
-        <SplashScreen />
-      ) : (
+      { (
         <>
-          <NavBar darkMode={darkMode} setDarkMode={setDarkMode} /> {/* Use NavBar here */}
 
           <main className="l-main">
             <section className="home" id="home">
-              <div className="home__container bd-container-first bd-grid">
+              <div className="home__container bd-container bd-grid">
                 <div className="home__data">
-                  <h3 className="home__title">MahaVastu Santulan</h3>
+                  <h3 className="home__title">About Us</h3>
                   <h3 className="home__subtitle">The promise to prosperity</h3>
-                  <a href="Courses.html" className="button">Consult Us now</a>
                 </div>
                 <div>
                   <div className="laptop">
@@ -118,7 +112,6 @@ const HomePage = () => {
             </div>
           </main>
 
-          <Footer /> {/* Use Footer here */}
         </>
       )}
     </div>
