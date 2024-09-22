@@ -2,7 +2,9 @@
 
 /*===== VARIABLES CSS =====*/
 :root {
-  --header-height: 3rem;
+  --header-height: 4rem;
+  --header-color: #A6A6A6;
+
 
   /*========== Colors ==========*/
   --first-color: #069C54;
@@ -239,7 +241,7 @@ img{
   .nav{
     max-width: 100%;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 0px;
     
   }
   .original-price{
@@ -375,7 +377,7 @@ img{
 
 .home__title{
   font-size: var(--biggest-font-size);
-  color: #C31C2E;
+  color: #d12336;
   margin-bottom: var(--mb-1);
 }
 
@@ -393,7 +395,7 @@ img{
 /*========== BUTTONS ==========*/
 .button{
   display: inline-block;
-  background-color: #C31C2E;
+  background-color: #d12336;
   color: #FFF;
   padding: .75rem 1rem;
   border-radius: .5rem;
@@ -556,7 +558,7 @@ img{
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #EA4335;
+  background-color: #d12336;
   display: flex;
   padding: .625rem .813rem;
   border-radius: .5rem 0 .5rem 0;
@@ -751,10 +753,11 @@ img{
   }
   .nav__list{
     display: flex;
+
   }
   .nav__item{
     justify-self: center;
-    margin-left: var(--mb-5);
+    margin-left: var(--mb-6);
     margin-bottom: 0;
   }
   .nav__toggle{
@@ -1012,7 +1015,7 @@ img{
           @media screen and (max-width: 679px) {
 
             .home__container{
-              height: calc(75vh - var(--header-height));
+              height: calc(55vh - var(--header-height));
               align-content: center;
             }
             .home__subtitle{
@@ -1239,7 +1242,7 @@ img{
 
 .splash-screen {
   display: flex;
-  margin-top: -50px;
+  margin-top: -72px;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -1277,6 +1280,27 @@ img{
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow on hover */
   background: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
 }
+
+.section{
+  padding: 4rem 0 2rem;
+}
+
+.bd-container-first{
+  width: calc(100% - 3rem);
+  margin-left: var(--mb-3);
+  margin-right: var(--mb-3);
+
+
+}
+.bd-container{
+  width: calc(100% - 3rem);
+  margin-top: 50%;
+  margin-left: var(--mb-3);
+  margin-right: var(--mb-3);
+
+
+}
+
 
 
 }

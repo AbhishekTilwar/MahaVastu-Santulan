@@ -51,7 +51,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
         <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`} id="nav-menu">
           <ul className="nav__list">
             <li className="nav__item">
-              <a href="home.html" className="nav__link active-link">Home</a>
+              <a href="" className="nav__link active-link">Home</a>
             </li>
             <li className="nav__item">
               <a href="Courses.html" className="nav__link">Courses</a>
@@ -62,15 +62,24 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             <li className="nav__item">
               <a href="Community.html" className="nav__link">Join Community</a>
             </li>
-            <li>
-              <Switch
-                checkedChildren="🌙"
-                unCheckedChildren="☀️"
-                checked={darkMode}
-                onChange={toggleTheme}
-                id="theme-button"
-              />
-            </li>
+            <li className="nav__item theme-switcher-container">
+  <div className="theme-switcher">
+    <motion.div
+      initial={{ scale: 0.8 }}
+      whileHover={{ scale: 1.1, rotate: 360 }}  // A smooth scaling and rotation animation
+      transition={{ duration: 0.4 }}
+    >
+      <Switch
+        checkedChildren={<span role="img" aria-label="moon">🌙</span>}  // Emoji for dark mode
+        unCheckedChildren={<span role="img" aria-label="sun">☀️</span>} // Emoji for light mode
+        checked={darkMode}
+        onChange={toggleTheme}
+        id="theme-button"
+      />
+    </motion.div>
+  </div>
+</li>
+
           </ul>
         </div>
 
@@ -81,7 +90,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               animate={{ rotate: 90 }}
               transition={{ duration: 0.3 }}
             >
-              <CloseOutlined />
+              <CloseOutlined style={{ color: '#d12336' }}/>
             </motion.div>
           ) : (
             <motion.div
@@ -89,7 +98,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             animate={{ x: 0, opacity: 1 }} 
               transition={{ duration: 0.3 }}
             >
-              <MenuOutlined />
+              <MenuOutlined style={{ color: '#b58001' }}/>
             </motion.div>
           )}
         

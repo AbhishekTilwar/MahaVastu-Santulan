@@ -49,14 +49,13 @@ const HomePage = () => {
 
           <main className="l-main">
             <section className="home" id="home">
-              <div className="home__container bd-container bd-grid">
+              <div className="home__container bd-container-first bd-grid">
                 <div className="home__data">
                   <h3 className="home__title">MahaVastu Santulan</h3>
                   <h3 className="home__subtitle">The promise to prosperity</h3>
                   <a href="Courses.html" className="button">Consult Us now</a>
                 </div>
                 <div>
-                  <img src="assets/img/home_blank.png" width="300px" alt="blank" />
                   <div className="laptop">
                     <div className="content">
                       <iframe
