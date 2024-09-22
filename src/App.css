@@ -151,6 +151,8 @@ img{
   width: calc(100% - 3rem);
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
+
+
 }
 
 .bd-grid{
@@ -198,6 +200,16 @@ img{
   
     transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   }
+  .bd-container_main {
+    max-width: 100%;
+    padding-top: 0.25rem;
+
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
 
 
   .nav__menu.show-menu {
@@ -228,6 +240,7 @@ img{
     max-width: 100%;
     margin-left: 10px;
     margin-top: 10px;
+    
   }
   .original-price{
     color: #666666;
@@ -795,6 +808,7 @@ img{
   .bd-container{
     margin-left: auto;
     margin-right: auto;
+
   }
 
   .home__img{
@@ -1107,21 +1121,29 @@ img{
 
           
 
-#splash-screen {
-  position: relative;
-  height: 100vh;
-  background-color:rgba(255, 255, 255, 5.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#splash-img {
-  position: absolute;
-  top: 60%;
-  transform: translateY(-50%);
-  transition: 1.4s ease-in-out;
-}
+          .splash-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff; /* Optional: Set a background color */
+          }
+          
+          .splash-logo {
+            width: 60vw; /* Adjust the size as needed */
+            height: 60vh; /* Adjust the size as needed */
+            animation: rotate 3s linear infinite;
+          }
+          
+          @keyframes rotate {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+          
 
 
 .iframe-container_form {
