@@ -279,7 +279,11 @@ img{
 
   
 }
-
+.maingif {
+  margin-top: -55px; 
+  z-index: 2;
+  /* Adjust this value to shift the GIF upwards on mobile */
+}
 
 .nav__list {
   list-style: none;
@@ -761,6 +765,7 @@ img{
   }
 /*========== MEDIA QUERIES ==========*/
 @media screen and (min-width: 576px){
+
   .home__container,
   .about__container,
   .app__container{
@@ -889,6 +894,31 @@ img{
   .home__container {
       height: 640px;
   }
+  .home {
+    position: relative;
+    background-image: url('https://t3.ftcdn.net/jpg/05/95/73/48/360_F_595734872_3kTTgRe8VBqosZL5m6eeEpp28tFpESjh.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: absolute; /* Optional for parallax */
+  }
+  
+  .home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency: 0.5 = 50% transparent */
+    z-index: 1;
+  }
+  
+  
+  
+  .home__data {
+    max-width: 600px;
+    z-index: 2;
+  }                  
 
 }
 
@@ -1376,6 +1406,41 @@ img{
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
 }
+
+
+
+
+.home {
+  position: relative;
+  background-image: url('https://t3.ftcdn.net/jpg/05/95/73/48/360_F_595734872_3kTTgRe8VBqosZL5m6eeEpp28tFpESjh.jpg');
+  background-size: cover; /* Adjust the second value (50%) for desired height */
+  background-position: center;
+  background-attachment: absolute; /* Optional for parallax */
+  height: 450px;
+
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency: 0.5 = 50% transparent */
+  z-index: 1;
+}
+
+.home__data {
+  max-width: 600px;
+  z-index: 2;
+}                  
+.home__title{
+  font-size: var(--biggest-font-size);
+  color: #d12336;
+  margin-bottom: var(--mb-1);
+  margin-top: 30%;
+}   
 
 
 }

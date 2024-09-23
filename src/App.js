@@ -122,33 +122,40 @@ const App = () => {
           <Routes>
             <Route path="/" element={
               <main className="l-main">
-                <section className="home" id="home">
-                  <div className="home__container bd-container-first bd-grid">
-                    <div className="home__data">
-                      <h3 className="home__title">MahaVastu Santulan</h3>
-                      <h3 className="home__subtitle">The promise to prosperity</h3>
-                      <a href="Courses.html" className="button-consult-mobile">Consult Us now</a>
-                    </div>
-                    <div>
-                      <img 
-                        src={MainGif} 
-                        alt="Header Image" 
-                        style={{
-                          width: 'auto',
-                          height: 'auto',
-                          objectFit: 'cover',
-                          objectPosition: 'top',
-                          clipPath: 'inset(0 0 10% 0)'
-                        }}
-                      />
-                      <div className="parent-element">
-                        <Button type="primary" shape="round" size="large" href="Courses.html" className="animated-button">
-                          Consult Us now
-                        </Button>
-                      </div>
-                    </div>
+               <section className="home" id="home">
+                <div className="home__container bd-container bd-grid">
+                  <div className="home__data">
+                    <h3 className="home__title">MahaVastu Santulan</h3>
+                    <h3 className="home__subtitle">The promise to prosperity</h3>
+                    <a href="" className="button-consult-mobile">Consult Us now</a>
                   </div>
-                </section>
+              <div className='maingif'>
+                <img 
+                  src={MainGif} 
+                  alt="Header Image" 
+                  style={{
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'cover',
+                    objectPosition: 'top',
+                    clipPath: 'inset(0 0 10% 0)'
+                  }}
+                />
+                   <div className="parent-element">
+                    <Button type="primary" shape="round" size="large" href="Courses.html" className="animated-button">
+                      Consult Us now
+                    </Button>
+                  </div>
+
+      
+    </div>
+  </div>
+</section>
+
+
+      
+
+
                 <section className="tiles-section">
                 <h2 className="section-title">VASTU CONSULTATION</h2>
                 {isMobile ? (
@@ -177,7 +184,9 @@ const App = () => {
                       </div>
                     ))}
                   </div>
+                  
                 )}
+                
               </section>
                 <div className="sponsors-container">
                   <h2>Effective Vastu Solutions, No Superstition, No Frills, No Demolition</h2>
