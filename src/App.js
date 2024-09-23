@@ -13,8 +13,6 @@ import SplashScreen from './SplashScreen';
 import { Card, Row, Col } from 'antd';
 import './Footer.css'; 
 import { Carousel } from 'antd';
-import VastuForm from './Form';
-
 
 
 
@@ -190,8 +188,6 @@ const App = () => {
               </section>
                 <div className="sponsors-container">
                   <h2>Effective Vastu Solutions, No Superstition, No Frills, No Demolition</h2>
-                  <VastuForm />
-
                 </div>
               </main>
             } />
