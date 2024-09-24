@@ -13,6 +13,8 @@ import SplashScreen from './SplashScreen';
 import { Card, Row, Col } from 'antd';
 import './Footer.css'; 
 import { Carousel } from 'antd';
+import VastuForm from './Form';
+
 
 
 
@@ -139,16 +141,14 @@ const App = () => {
                     clipPath: 'inset(0 0 10% 0)'
                   }}
                 />
-                   <div className="parent-element">
-                    <Button type="primary" shape="round" size="large" href="Courses.html" className="animated-button">
-                      Consult Us now
-                    </Button>
-                  </div>
+                  
 
       
     </div>
+    
   </div>
 </section>
+                  
 
 
       
@@ -168,7 +168,7 @@ const App = () => {
                     ))}
                   </Carousel>
                 ) : (
-                  <div className="tiles-grid">
+                  <div className="tiles-grid ">
                     {tiles.map(tile => (
                       <div key={tile.id} className="tile">
                         <a href={tile.link}>
@@ -181,17 +181,34 @@ const App = () => {
                         </a>
                       </div>
                     ))}
+
+                    
                   </div>
+
+                  
                   
                 )}
+
+                    <div className="parent-element">
+                      <Button type="primary" shape="round" size="large" href="Courses.html" className="animated-button">
+                        Consult Us now
+                      </Button>
+                    </div>
+                    
                 
               </section>
+{/* 
+ Mobile-only section
+ <MobileSection /> */}
+
                 <div className="sponsors-container">
                   <h2>Effective Vastu Solutions, No Superstition, No Frills, No Demolition</h2>
+                  <VastuForm />
+
                 </div>
               </main>
             } />
-            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/contact" element={<ContactUs />} /> 
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           <Footer />

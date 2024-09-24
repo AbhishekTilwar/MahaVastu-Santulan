@@ -1100,9 +1100,19 @@ img{
           }
 
           @media screen and (max-width: 679px) {
-
+            .maingif {
+              display: none;
+              margin-top: -55px; /* Adjust this value to shift it upwards */
+            }
+            .home {
+              position: relative;
+              background-image: url('https://www.vastuquest.com/wp-content/uploads/2024/06/Vastu-Compass-1024x500.webp');
+              background-size: cover;
+              background-position: center;
+              background-attachment: absolute; /* Optional for parallax */
+            }
             .home__container{
-              height: calc(55vh - var(--header-height));
+              height: calc(40vh - var(--header-height));
               align-content: center;
             }
             .home__subtitle{
@@ -1126,6 +1136,8 @@ img{
               padding: .75rem;
               margin-bottom: 0.6rem;
             }
+
+           
                       /* The laptop with borders */
           .laptop {
             -webkit-transform-origin: 0 0;
@@ -1402,45 +1414,19 @@ img{
   justify-content: center;
 }
 .parent-element {
+  padding-top: 7%;
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
-}
-
-
-
-
-.home {
-  position: relative;
-  background-image: url('https://t3.ftcdn.net/jpg/05/95/73/48/360_F_595734872_3kTTgRe8VBqosZL5m6eeEpp28tFpESjh.jpg');
-  background-size: cover; /* Adjust the second value (50%) for desired height */
-  background-position: center;
-  background-attachment: absolute; /* Optional for parallax */
-  height: 450px;
 
 }
 
-.home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency: 0.5 = 50% transparent */
-  z-index: 1;
-}
 
-.home__data {
-  max-width: 600px;
-  z-index: 2;
-}                  
 .home__title{
   font-size: var(--biggest-font-size);
-  color: #d12336;
+  color: #ffffff;
   margin-bottom: var(--mb-1);
-  margin-top: 30%;
-}   
+}
 
 
 }
