@@ -1,0 +1,106 @@
+/* Common Styles */
+.fancy-tile-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    padding-left: px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Maintain 3:2 ratio for the image container */
+.fancy-image-overlay {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%; /* 3:2 aspect ratio (height is 66.66% of width) */
+
+}
+
+.fancy-tile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text overlay styling */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay behind text */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%; /* Restrict the width of the text */
+    word-wrap: break-word;
+}
+
+.text-overlay h2 {
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.text-overlay p {
+    font-size: 1vw;
+    margin-top: 5px;
+}
+
+/* Button styling */
+.tile-button {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #ffb401;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1vw;
+}
+
+.tile-button:hover {
+    background-color: #d12336;
+}
+
+/* Grid layout for larger screens */
+.tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+/* Carousel container for mobile */
+@media (max-width: 768px) {
+    .fancy-tile-container {
+        border-radius: 15px;
+        padding-top: 12px;
+
+        padding-left: 12px;
+        padding-right: 12px;
+
+        height: auto; /* Make height responsive for mobile */
+    }
+
+    .text-overlay h2 {
+        font-size: 4vw; /* Larger text on mobile */
+    }
+
+    .text-overlay p {
+        font-size: 3vw; /* Larger description on mobile */
+    }
+
+    .tile-button {
+        font-size: 3.5vw; /* Adjust button text size on mobile */
+        padding: 8px 15px; /* Larger button padding on mobile */
+    }
+}

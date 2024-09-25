@@ -1431,3 +1431,91 @@ img{
 
 
 }
+
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.tile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.tile img {
+  width: 100%;
+  height: 250px; /* Adjust this according to your layout */
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.tile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.tile:hover .tile-overlay {
+  opacity: 1;
+}
+
+.tile-title-default {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ffb401; /* Fancy golden color */
+  text-align: center;
+}
+
+.tile-title-hover {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+.tile-button {
+  background: #ffb401;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 30px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  /* transition: background 0.3s ease-in-out; */
+}
+
+.tile-button:hover {
+  background: #d12336; /* A transition to a different color on hover */
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .tile img {
+    height: 200px; /* Adjust for mobile */
+  }
+}
+.vastu-solutions {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  text-align: center; /* Centers text within the div */
+  font-family: 'Arial', sans-serif; /* Change to your preferred professional font */
+  padding: 20px; /* Adjust padding as needed */
+}

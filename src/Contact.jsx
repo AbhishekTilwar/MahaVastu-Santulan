@@ -67,48 +67,9 @@ const HomePage = () => {
               </div>
             </section>
 
-            <section className="menu section bd-container" id="menu">
-              <h2 className="section-title">Popular Live Courses</h2>
-              <h1 className="section-subtitle">Programming Courses</h1>
-              <div className="menu__containers bd-grid">
-                <div className="menu__content">
-                  <a href="c_programming_course.html">
-                    <img src="assets/img/c.png" alt="C Programming" className="menu__img" />
-                    <h3 className="menu__name">C Programming</h3>
-                    <span className="menu__detail">Live Classes</span>
-                    <div className="pricing">
-                      <span className="sale-price">₹1299</span>
-                      <span className="original-price">₹4500</span>
-                      <span className="off-price">70% off</span>
-                    </div>
-                    <a href="c_programming_course.html" className="button menu__button_grey">Enroll Now</a>
-                  </a>
-                </div>
-              </div>
-            </section>
 
             <div className="sponsors-container">
-              <h2>Our Students are selected in</h2>
-              <motion.div
-                className="sponsors-list"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                {sponsors.map((sponsor, index) => (
-                  <motion.div
-                    className="sponsor-item"
-                    key={index}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <img src={sponsor.src} alt={sponsor.alt} />
-                  </motion.div>
-                ))}
-              </motion.div>
-              <a href="Community.html">
-                <h2 style={{ color: 'gray' }}>+ much more..</h2>
-              </a>
+            
             </div>
           </main>
 

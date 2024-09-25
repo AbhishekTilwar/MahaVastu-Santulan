@@ -14,8 +14,13 @@ import { Card, Row, Col } from 'antd';
 import './Footer.css'; 
 import { Carousel } from 'antd';
 import VastuForm from './Form';
-import GoogleReviews from './GoogleReviews';  // Import the GoogleReviews component
-
+import CustomerReviews from './CustomerReviews/CustomerReviews';  // Import the GoogleReviews component
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import ImageTileContainer from './ImageTileContainer';
+import CoFounders from './CoFounders';
+import Service from './WhyChooseUs';
 
 
 
@@ -153,68 +158,52 @@ const App = () => {
 
 
       
+<section className="tiles-section" >
+<CoFounders/>
+<h2 style={{ paddingTop: '-40px' }}>VASTU CONSULTATION</h2>
 
 
-                <section className="tiles-section">
-                <h2 className="section-title">VASTU CONSULTATION</h2>
-                {isMobile ? (
-                  <Carousel autoplay autoplaySpeed={2000}> {/* 3 seconds for each slide */}
-                    {tiles.map(tile => (
-                      <div key={tile.id} className="tile">
-                        <a href={tile.link}>
-                          <img src={tile.image} alt={tile.title} className="tile-image" />
-                          <div className="tile-title-mobile">{tile.title}</div>
-                        </a>
-                      </div>
-                    ))}
-                  </Carousel>
-                ) : (
-                  <div className="tiles-grid ">
-                    {tiles.map(tile => (
-                      <div key={tile.id} className="tile">
-                        <a href={tile.link}>
-                          <img src={tile.image} alt={tile.title} className="tile-image" />
-                          <div className="tile-title-default">{tile.title}</div>
-                          <div className="tile-overlay">
-                            <h6 className="tile-title-hover"><br />{tile.description}</h6>
-                            <a href={tile.link} className="tile-button">Know More</a>
-                          </div>
-                        </a>
-                      </div>
-                    ))}
+    <ImageTileContainer tiles={tiles} isMobile={isMobile} />
 
-                    
-                  </div>
-
-                  
-                  
-                )}
-
-                    <div className="parent-element">
+  <div className="parent-element">
                       <Button type="primary" shape="round" size="large" href="Courses.html" className="animated-button">
                         Consult Us now
                       </Button>
                     </div>
-                    
+
+                    <div className="vastu-solutions">
+            <h1>Unlock the Power of Positive Energy with Expert Vastu Solutions</h1>
+            <p>
+                At <strong>MahaVastu Santulan</strong>, we combine the ancient wisdom of Vastu Shastra 
+                with modern architectural expertise to help you create harmonious spaces that nurture 
+                your well-being and success. With a deep understanding of both traditional Vastu principles 
+                and contemporary design practices, our team of seasoned Vastu consultants is dedicated 
+                to transforming your living and working environments into sanctuaries of peace and prosperity.
+            </p>
+        </div>
+</section>
+
+
+       <Service/>
                 
-              </section>
 {/* 
  Mobile-only section
  <MobileSection /> */}
 
                 <div className="sponsors-container">
-                  <h2>Effective Vastu Solutions, No Superstition, No Frills, No Demolition</h2>
-                  <VastuForm />
 
                 </div>
 
                 <div>
-                <GoogleReviews />  {/* Render the GoogleReviews component */}
+                {/* <GoogleReviews />  Render the GoogleReviews component */}
+                <CustomerReviews/>
 
                 </div>
               </main>
             } />
             <Route path="/contact" element={<ContactUs />} /> 
+            <Route path="/form" element={<VastuForm />} /> 
+
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           <Footer />
@@ -225,18 +214,19 @@ const App = () => {
             <Button 
               type="primary" 
               shape="circle" 
-              icon={<WechatOutlined style={{ fontSize: '26px' }} />}
+              icon={<WechatOutlined style={{ fontSize: '33px', color:'#ffffff' }} />}
               style={{ 
                 position: 'fixed', 
                 bottom: '20px', 
                 right: '20px', 
                 zIndex: 1000, 
                 boxShadow: '0 4px 8px rgba(0,0,0,0.2)', 
-                width: '50px',  
-                height: '50px',
+                width: '65px',  
+                height: '65px',
                 backgroundColor:'#ffb401',
                 lineHeight: '60px', 
-                animation: 'blink 2.5s infinite'
+                animation: 'blink 2.5s infinite',
+                color:'#ffb401'
               }} 
             />
           </Popover>

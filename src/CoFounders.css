@@ -1,0 +1,60 @@
+.cofounders-container {
+  text-align: center;
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.cofounders {
+  position: relative;
+  overflow: hidden; /* Hide overflow for sliding effect */
+  height: 400px; /* Set a height for mobile mode */
+}
+
+.cofounder-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease;
+  transform: translateX(100%); /* Start off-screen to the right */
+}
+
+.cofounder-card.active {
+  opacity: 1;
+  transform: translateX(0); /* Slide in */
+}
+
+.cofounders.mobile .cofounder-card {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.cofounder-image {
+  width: 35%;
+  border-radius: 50%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Media Queries for PC size */
+@media (min-width: 768px) {
+  .cofounders {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .cofounder-card {
+    position: static; /* Reset position for PC layout */
+    opacity: 1; /* Ensure opacity is 1 */
+    transform: translateX(0); /* No sliding effect */
+  }
+
+  .cofounder-card {
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
