@@ -209,7 +209,7 @@ const App = () => {
                 </div>
 
                 <div>
-              //  <GoogleReviews />  {/* Render the GoogleReviews component */}
+                  {/* <GoogleReviews /> Render the GoogleReviews component */}
 
                 </div>
               </main>
