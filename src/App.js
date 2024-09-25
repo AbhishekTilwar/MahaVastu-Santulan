@@ -14,6 +14,7 @@ import { Card, Row, Col } from 'antd';
 import './Footer.css'; 
 import { Carousel } from 'antd';
 import VastuForm from './Form';
+import GoogleReviews from './GoogleReviews';  // Import the GoogleReviews component
 
 
 
@@ -204,6 +205,11 @@ const App = () => {
                 <div className="sponsors-container">
                   <h2>Effective Vastu Solutions, No Superstition, No Frills, No Demolition</h2>
                   <VastuForm />
+
+                </div>
+
+                <div>
+                <GoogleReviews />  {/* Render the GoogleReviews component */}
 
                 </div>
               </main>

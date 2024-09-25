@@ -205,10 +205,10 @@ img{
   .bd-container_main {
     max-width: 100%;
     padding-top: 0.25rem;
-
     padding-right: 2rem;
     margin-left: auto;
     margin-right: auto;
+  
     
 }
 
@@ -1105,6 +1105,7 @@ img{
               margin-top: -55px; /* Adjust this value to shift it upwards */
             }
             .home {
+              padding-top: 0.1px;
               position: relative;
               background-image: url('https://www.vastuquest.com/wp-content/uploads/2024/06/Vastu-Compass-1024x500.webp');
               background-size: cover;
@@ -1112,7 +1113,7 @@ img{
               background-attachment: absolute; /* Optional for parallax */
             }
             .home__container{
-              height: calc(40vh - var(--header-height));
+              height: calc(30vh - var(--header-height));
               align-content: center;
             }
             .home__subtitle{
