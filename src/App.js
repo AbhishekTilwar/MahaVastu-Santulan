@@ -14,6 +14,7 @@ import { Card, Row, Col } from 'antd';
 import './Footer.css'; 
 import { Carousel } from 'antd';
 import VastuForm from './Form';
+<<<<<<< HEAD
 import CustomerReviews from './CustomerReviews/CustomerReviews';  // Import the GoogleReviews component
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -21,6 +22,10 @@ import "slick-carousel/slick/slick-theme.css";
 import ImageTileContainer from './ImageTileContainer';
 import CoFounders from './CoFounders';
 import Service from './WhyChooseUs';
+=======
+//import GoogleReviews from './GoogleReviews';  // Import the GoogleReviews component
+
+>>>>>>> ad913762d14a1ebe52acd9cff32a209ccf79e89f
 
 
 
@@ -195,8 +200,12 @@ const App = () => {
                 </div>
 
                 <div>
+<<<<<<< HEAD
                 {/* <GoogleReviews />  Render the GoogleReviews component */}
                 <CustomerReviews/>
+=======
+                  {/* <GoogleReviews /> Render the GoogleReviews component */}
+>>>>>>> ad913762d14a1ebe52acd9cff32a209ccf79e89f
 
                 </div>
               </main>
