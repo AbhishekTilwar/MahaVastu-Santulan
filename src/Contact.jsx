@@ -69,7 +69,27 @@ const HomePage = () => {
 
 
             <div className="sponsors-container">
-            
+              <h2>Our Students are selected in</h2>
+              <motion.div
+                className="sponsors-list"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                {sponsors.map((sponsor, index) => (
+                  <motion.div
+                    className="sponsor-item"
+                    key={index}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <img src={sponsor.src} alt={sponsor.alt} />
+                  </motion.div>
+                ))}
+              </motion.div>
+              <a href="Community.html">
+                <h2 style={{ color: 'gray' }}>+ much more..</h2>
+              </a>
             </div>
           </main>
 
