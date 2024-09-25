@@ -14,7 +14,7 @@ import { Card, Row, Col } from 'antd';
 import './Footer.css'; 
 import { Carousel } from 'antd';
 import VastuForm from './Form';
-import GoogleReviews from './GoogleReviews';  // Import the GoogleReviews component
+//import GoogleReviews from './GoogleReviews';  // Import the GoogleReviews component
 
 
 
@@ -209,7 +209,7 @@ const App = () => {
                 </div>
 
                 <div>
-                <GoogleReviews />  {/* Render the GoogleReviews component */}
+              //  <GoogleReviews />  {/* Render the GoogleReviews component */}
 
                 </div>
               </main>
