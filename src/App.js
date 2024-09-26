@@ -135,7 +135,7 @@ const App = () => {
                     <h3 className="home__subtitle">The promise to prosperity</h3>
                     <a href="" className="button-consult-mobile">Consult Us now</a>
                   </div>
-              <div className='maingif'>
+              {/* <div className='maingif'>
                 <img 
                   src={MainGif} 
                   alt="Header Image" 
@@ -150,7 +150,7 @@ const App = () => {
                   
 
       
-    </div>
+    </div> */}
     
   </div>
 </section>

@@ -900,6 +900,7 @@ img{
     background-size: cover;
     background-position: center;
     background-attachment: absolute; /* Optional for parallax */
+    height: 600px;
   }
   
   .home::before {
@@ -1111,6 +1112,7 @@ img{
               background-size: cover;
               background-position: center;
               background-attachment: absolute; /* Optional for parallax */
+              height: 300px;
             }
             .home__container{
               height: calc(30vh - var(--header-height));

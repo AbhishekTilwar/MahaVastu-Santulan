@@ -97,19 +97,19 @@ const Footer = () => {
           <div className="contact-item">
             <FaPhoneAlt className="contact-icon" />
             <Tippy content="Call Us" placement="top">
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
+              <a href="tel:+1234567890">+ (91) 7020753306</a>
             </Tippy>
           </div>
           <div className="contact-item">
             <FaEnvelope className="contact-icon" />
             <Tippy content="Email Us" placement="top">
-              <a href="mailto:info@vastu.com">info@vastu.com</a>
+              <a href="mailto:info@vastu.com">info@mahavastusantulan.com</a>
             </Tippy>
           </div>
           <div className="contact-item">
             <FaMapMarkerAlt className="contact-icon" />
             <Tippy content="Visit Us" placement="top">
-              <span>123 Vastu Street, Harmony City</span>
+              <span>Akola, Maharashtra</span>
             </Tippy>
           </div>
         </div>
@@ -139,7 +139,7 @@ const Footer = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
       >
-        <p>&copy; 2024 Vastu Inc. All Rights Reserved.</p>
+        <p>&copy; 2024 MahaVastu Santulan. All Rights Reserved.</p>
       </motion.div>
     </footer>
   );

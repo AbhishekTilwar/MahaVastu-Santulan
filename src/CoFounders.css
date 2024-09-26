@@ -7,7 +7,7 @@
 .cofounders {
   position: relative;
   overflow: hidden; /* Hide overflow for sliding effect */
-  height: 400px; /* Set a height for mobile mode */
+  height: 450px; /* Set a height for mobile mode */
 }
 
 .cofounder-card {
@@ -38,6 +38,7 @@
 
 /* Media Queries for PC size */
 @media (min-width: 768px) {
+  
   .cofounders {
     display: flex;
     justify-content: space-around;
