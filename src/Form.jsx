@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Select, Modal } from 'antd';
 import { motion } from 'framer-motion'; // Import framer-motion for animation
+import './Form.css'; // Add external CSS for input styling
+import img1 from './assets/img/ele1.png'; // Import images
+import img2 from './assets/img/ele2.png';
+import img3 from './assets/img/icon.png';
 
 const { Option } = Select;
 
 const VastuForm = () => {
   const [form] = Form.useForm();
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [inputFocus, setInputFocus] = useState({
+    name: false,
+    phone: false,
+    email: false,
+  });
 
   const handleSubmit = (values) => {
     console.log('Form Values:', values);
-    // Show the modal on submit
     setIsModalVisible(true);
   };
 
   const handleModalOk = () => {
     setIsModalVisible(false);
-    form.resetFields(); // Reset the form after submission
+    form.resetFields();
   };
 
   const handleModalCancel = () => {
@@ -25,18 +33,54 @@ const VastuForm = () => {
 
   return (
     <section>
-      <div 
-        style={{ 
-          maxWidth: '600px', 
-          margin: '0 auto', 
-          padding: '20px', 
-          paddingTop: '25vh' // Push form down by 25% of the viewport height for PC
+      <div
+  style={{
+    maxWidth: '600px',
+    margin: '0 auto',
+    padding: '20px',
+    marginTop: '60px', // Adjust this value based on your NavBar's height
+  }}
+></div>
+      <div className="image-container">
+        <motion.img
+          src={img1}
+          alt="Image 1"
+          className="animated-image left-image"
+          initial={{ x: '-100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        />
+        <motion.img
+          src={img3}
+          alt="Image 3"
+          className="animated-image center-image"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        />
+        <motion.img
+          src={img2}
+          alt="Image 2"
+          className="animated-image right-image"
+          initial={{ x: '100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        />
+      </div>
+
+      <div
+        style={{
+          maxWidth: '600px',
+          margin: '0 auto',
+          padding: '20px',
         }}
       >
-        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Get Vastu Consultation</h2>
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+          Get Vastu Consultation
+        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <Form
@@ -45,36 +89,52 @@ const VastuForm = () => {
             onFinish={handleSubmit}
             initialValues={{ service: 'home' }}
           >
-            <Form.Item
-              label="Full Name"
-              name="name"
-              rules={[{ required: true, message: 'Please enter your name' }]}
-            >
-              <Input placeholder="Enter your full name" />
-            </Form.Item>
+            {/* Full Name Input with Floating Label */}
+            <div className="input-wrapper">
+              <Input
+                type="text"
+                id="name"
+                placeholder=" "
+                onFocus={() => setInputFocus({ ...inputFocus, name: true })}
+                onBlur={() => setInputFocus({ ...inputFocus, name: false })}
+                className={`input-field ${inputFocus.name ? 'focused' : ''}`}
+              />
+              <label htmlFor="name" className={`input-label ${inputFocus.name ? 'input-focused' : ''}`}>
+                Full Name
+              </label>
+            </div>
 
-            <Form.Item
-              label="Phone Number"
-              name="phone"
-              rules={[
-                { required: true, message: 'Please enter your phone number' },
-                { pattern: /^[0-9]{10}$/, message: 'Please enter a valid 10-digit phone number' },
-              ]}
-            >
-              <Input placeholder="Enter your phone number" />
-            </Form.Item>
+            {/* Phone Number Input with Floating Label */}
+            <div className="input-wrapper">
+              <Input
+                type="text"
+                id="phone"
+                placeholder=" "
+                onFocus={() => setInputFocus({ ...inputFocus, phone: true })}
+                onBlur={() => setInputFocus({ ...inputFocus, phone: false })}
+                className={`input-field ${inputFocus.phone ? 'focused' : ''}`}
+              />
+              <label htmlFor="phone" className={`input-label ${inputFocus.phone ? 'input-focused' : ''}`}>
+                Phone Number
+              </label>
+            </div>
 
-            <Form.Item
-              label="Email Address"
-              name="email"
-              rules={[
-                { required: true, message: 'Please enter your email' },
-                { type: 'email', message: 'Please enter a valid email' },
-              ]}
-            >
-              <Input placeholder="Enter your email" />
-            </Form.Item>
+            {/* Email Input with Floating Label */}
+            <div className="input-wrapper">
+              <Input
+                type="email"
+                id="email"
+                placeholder=" "
+                onFocus={() => setInputFocus({ ...inputFocus, email: true })}
+                onBlur={() => setInputFocus({ ...inputFocus, email: false })}
+                className={`input-field ${inputFocus.email ? 'focused' : ''}`}
+              />
+              <label htmlFor="email" className={`input-label ${inputFocus.email ? 'input-focused' : ''}`}>
+                Email Address
+              </label>
+            </div>
 
+            {/* Vastu Service Select */}
             <Form.Item
               label="Vastu Service"
               name="service"
@@ -89,22 +149,22 @@ const VastuForm = () => {
             </Form.Item>
 
             <Form.Item>
-              <Button 
-                type="primary" 
-                htmlType="submit" 
-                block 
+              <Button
+                type="primary"
+                htmlType="submit"
+                block
                 style={{
-                  backgroundColor: '#4CAF50', 
-                  borderColor: '#4CAF50', 
+                  backgroundColor: '#4CAF50',
+                  borderColor: '#4CAF50',
                   borderRadius: '5px',
                   transition: '0.3s',
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#45a049'; 
+                  e.target.style.backgroundColor = '#45a049';
                   e.target.style.transform = 'scale(1.05)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#4CAF50'; 
+                  e.target.style.backgroundColor = '#4CAF50';
                   e.target.style.transform = 'scale(1)';
                 }}
               >
@@ -127,4 +187,4 @@ const VastuForm = () => {
   );
 };
 
-export default VastuForm;
+export default VastuForm;  

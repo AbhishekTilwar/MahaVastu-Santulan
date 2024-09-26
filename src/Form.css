@@ -1,61 +1,71 @@
-.form-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 110vh;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    padding: 20px;
+.input-wrapper {
+    position: relative;
+    margin-bottom: 30px;
   }
   
-  .form-card {
+  .input-field {
+    display: block;
     width: 100%;
-    max-width: 600px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    padding: 8px 12px; /* px-2 py-1 in Tailwind */
+    color: #1a202c; /* text-gray-900 in Tailwind */
+    background-color: transparent; /* bg-transparent in Tailwind */
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #d1d5db; /* border-gray-300 in Tailwind */
+    outline: none; /* focus:outline-none in Tailwind */
+    transition: border-color 0.3s ease; /* smooth transition */
   }
   
-  .form-card:hover {
-    transform: translateY(-5px);
+  
+  .input-field:focus {
+    border-bottom-color: #3b82f6; /* focus:border-blue-500 in Tailwind */
   }
   
-  .form-title {
-    text-align: center;
-    color: #333;
+  .input-label {
+    position: absolute;
+    left: 12px;
+    top: 3px;
+    color: #9ca3af; /* text-gray-600 in Tailwind */
+    transition: all 0.3s ease;
+    pointer-events: none;
   }
   
-  .form-input, .form-select {
-    transition: border-color 0.3s, box-shadow 0.3s;
+  .input-field:focus + .input-label,
+  .input-field:not(:placeholder-shown) + .input-label {
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: #4CAF50;
   }
   
-  .form-input:focus, .form-select:focus {
-    border-color: #1890ff;
-    box-shadow: 0 0 5px rgba(24, 144, 255, 0.5);
+  .input-focused {
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: #4CAF50;
   }
   
-  .form-button {
-    background-color: #1890ff;
-    border-color: #1890ff;
-    transition: background-color 0.3s, transform 0.3s;
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Space between images and form */
   }
   
-  .form-button:hover {
-    background-color: #40a9ff;
-    transform: scale(1.05);
+  .animated-image {
+    width: 180px; /* Set your preferred width */
+    height: auto; /* Maintain aspect ratio */
   }
   
-
-  /* VastuForm.css */
-/* VastuForm.css */
-.vastu-form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+  .center-image {
+    width: 120px; /* Set your preferred width */
+    height: auto; /* Maintain aspect ratio */  
+    margin: 0 auto; /* Center the middle image */
   }
-  
-  @media (min-width: 768px) { /* Example for PC screens */
-    .vastu-form-container {
-      padding-top: 25vh; /* Move down for larger screens */
-    }
+  @media (max-width: 768px) {
+    .animated-image {
+        width: 100px; /* Set your preferred width */
+        height: auto; /* Maintain aspect ratio */
+      }
+      .center-image {
+       
+        margin: 0 auto; /* Center the middle image */
+      }
   }
-  
