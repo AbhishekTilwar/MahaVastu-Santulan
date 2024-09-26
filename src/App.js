@@ -133,7 +133,7 @@ const App = () => {
                   <div className="home__data">
                     <h3 className="home__title">MahaVastu Santulan</h3>
                     <h3 className="home__subtitle">The promise to prosperity</h3>
-                    <a href="" className="button-consult-mobile">Consult Us now</a>
+                    <a href="/form" className="button-consult-mobile">Consult Us now</a>
                   </div>
               {/* <div className='maingif'>
                 <img 
@@ -166,7 +166,7 @@ const App = () => {
     <ImageTileContainer tiles={tiles} isMobile={isMobile} />
 
   <div className="parent-element">
-                      <Button type="primary" shape="round" size="large" href="Courses.html" className="animated-button">
+                      <Button href= '/form' type="primary" shape="round" size="large" className="animated-button">
                         Consult Us now
                       </Button>
                     </div>

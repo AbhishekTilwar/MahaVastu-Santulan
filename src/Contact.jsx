@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from 'framer-motion';
+import { Button } from 'antd';
 
 import NavBar from './NavBar'; // Import the NavBar component
 import Footer from './Footer'; // Import the Footer component
@@ -35,6 +36,10 @@ const HomePage = () => {
     { src: 'assets/img/Jio-Logo.png', alt: 'Jio' },
     { src: 'assets/img/ptc.png', alt: 'PTC' },
     { src: 'assets/img/Vodafone-Logo.png', alt: 'Vodafone' },
+    { src: 'assets/img/ey.png', alt: 'EY' },
+    { src: 'assets/img/Jio-Logo.png', alt: 'Jio' },
+    { src: 'assets/img/ptc.png', alt: 'PTC' },
+    { src: 'assets/img/Vodafone-Logo.png', alt: 'Vodafone' },
   ];
 
   return (
@@ -42,56 +47,44 @@ const HomePage = () => {
       { (
         <>
 
-          <main className="l-main">
-            <section className="home" id="home">
-              <div className="home__container bd-container bd-grid">
-                <div className="home__data">
-                  <h3 className="home__title">About Us</h3>
-                  <h3 className="home__subtitle">The promise to prosperity</h3>
-                </div>
-                <div>
-                  <div className="laptop">
-                    <div className="content">
-                      <iframe
-                        id="video"
-                        width="98%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/x4SYkYP54WA?autoplay=1"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
+<main className="l-main">
+  <section className="home-contactus" id="home">
+    <div className="home__container bd-container bd-grid">
+      <div className="home__data">
+        <h3 className="home__title" style={{ color: '#d12336' }}>About Us</h3>
+        <h3 className="home__subtitle">The promise to prosperity</h3>
+        <h5>Welcome to MahaVastu Santulan, where we harmonize your living spaces with the ancient wisdom of Vastu Shastra. Our mission is to promote well-being and prosperity by aligning the energies of your environment with your personal and professional aspirations. With a team of experienced consultants, we offer personalized Vastu consultations that transform homes and workplaces into sanctuaries of positivity and balance. At MahaVastu Santulan, we believe that a well-designed space can enhance your life, fostering health, happiness, and success. Join us on a journey to create a harmonious living environment that nurtures your mind, body, and spirit.</h5>
+        <a href="/form" className="button-consult-mobile">Consult Us now</a>
+        <div className="parent-element">
+                      <Button href= '/form' type="primary" shape="round" size="large" className="animated-button">
+                        Contact Us
+                      </Button>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+      </div>
+    </div>
+  </section>
+
+  <section className="home-laptop" id="home">
+
+    <div className="laptop">
+      <div className="content">
+        <iframe
+          id="video"
+          width="98%"
+          height="100%"
+          src="https://www.youtube.com/embed/HzGtmbdmUe4?autoplay=1"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
 
 
-            <div className="sponsors-container">
-              <h2>Our Students are selected in</h2>
-              <motion.div
-                className="sponsors-list"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                {sponsors.map((sponsor, index) => (
-                  <motion.div
-                    className="sponsor-item"
-                    key={index}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <img src={sponsor.src} alt={sponsor.alt} />
-                  </motion.div>
-                ))}
-              </motion.div>
-              <a href="Community.html">
-                <h2 style={{ color: 'gray' }}>+ much more..</h2>
-              </a>
-            </div>
-          </main>
+</main>
+
+
 
         </>
       )}

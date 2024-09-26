@@ -5,6 +5,7 @@ import './Form.css'; // Add external CSS for input styling
 import img1 from './assets/img/ele1.png'; // Import images
 import img2 from './assets/img/ele2.png';
 import img3 from './assets/img/icon.png';
+import { SendOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
@@ -149,27 +150,29 @@ const VastuForm = () => {
             </Form.Item>
 
             <Form.Item>
-              <Button
-                type="primary"
-                htmlType="submit"
-                block
-                style={{
-                  backgroundColor: '#4CAF50',
-                  borderColor: '#4CAF50',
-                  borderRadius: '5px',
-                  transition: '0.3s',
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#45a049';
-                  e.target.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#4CAF50';
-                  e.target.style.transform = 'scale(1)';
-                }}
-              >
-                Submit
-              </Button>
+            <Button
+  type="primary"
+  htmlType="submit"
+  block
+  icon={<SendOutlined />}
+  style={{
+    backgroundColor: '#4CAF50',
+    borderColor: '#4CAF50',
+    borderRadius: '5px',
+    transition: '0.3s',
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.backgroundColor = '#45a049';
+    e.target.style.transform = 'scale(1.05)';
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.backgroundColor = '#4CAF50';
+    e.target.style.transform = 'scale(1)';
+  }}
+>
+  Submit
+</Button>
+
             </Form.Item>
           </Form>
         </motion.div>

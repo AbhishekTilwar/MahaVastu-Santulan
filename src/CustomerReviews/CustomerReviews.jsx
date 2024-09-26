@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Form, Input, Rate, Button, Upload } from 'antd';
 import { UploadOutlined, HeartTwoTone } from '@ant-design/icons';
 import './CustomerReviews.css';
+import { PlusCircleOutlined, MessageOutlined } from '@ant-design/icons';
 
 const { TextArea } = Input;
 
@@ -155,17 +156,28 @@ const CustomerReviews = () => {
         ))}
       </div>
 
-      {/* Add and Show/Hide buttons in the same row */}
-      <div className="button-row">
-        <Button type="primary" onClick={showModal} className="fancy-button">
-          Add Review
-        </Button>
-        {!showAll && (
-          <Button type="default" onClick={toggleReviews} className="fancy-button">
-            See All Comments
-          </Button>
-        )}
-      </div>
+     {/* Add and Show/Hide buttons in the same row */}
+<div className="button-row">
+  <Button
+    type="primary"
+    onClick={showModal}
+    className="fancy-button"
+    icon={<PlusCircleOutlined />}
+  >
+    Add Review
+  </Button>
+  {!showAll && (
+    <Button
+      type="default"
+      onClick={toggleReviews}
+      className="fancy-button"
+      icon={<MessageOutlined />}
+    >
+      See All Comments
+    </Button>
+  )}
+</div>
+
 
       {/* Display reviews when 'See All Comments' is clicked */}
       {showAll && (

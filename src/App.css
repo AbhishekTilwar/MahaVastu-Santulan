@@ -171,6 +171,8 @@ img{
   background-color: var(--body-color);
 }
 
+
+
 /*========== NAV ==========*/
 .nav{
   max-width: 1480px;
@@ -902,6 +904,13 @@ img{
     background-attachment: absolute; /* Optional for parallax */
     height: 600px;
   }
+  .home-contactus  {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: absolute; /* Optional for parallax */
+    height: 600px;
+  }
   
   .home::before {
     content: "";
@@ -1113,6 +1122,19 @@ img{
               background-position: center;
               background-attachment: absolute; /* Optional for parallax */
               height: 280px;
+            }
+            .home-contactus {
+              padding-top:90px;
+              position: relative;
+              text-align: center;
+              height: 280px;
+            }
+            .home-laptop {
+              padding-bottom: 540px;
+              position: relative;
+              background-size: cover;
+              background-position: center;
+              background-attachment: absolute; /* Optional for parallax */
             }
             .home__container{
               height: calc(30vh - var(--header-height));

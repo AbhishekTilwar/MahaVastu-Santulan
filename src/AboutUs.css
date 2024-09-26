@@ -1,0 +1,89 @@
+.about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-us-title h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  .about-us-title p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .about-us-content {
+    margin-top: 30px;
+    padding: 0 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+  }
+  
+  .laptop {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  .laptop iframe {
+    border-radius: 10px;
+  }
+  
+  .about-us-values {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .about-us-values h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .about-us-values ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-us-values li {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 10px 0;
+  }
+  
+  .contact-us {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .contact-us h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .contact-us p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .contact-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #0056b3;
+  }
+  
