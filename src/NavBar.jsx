@@ -78,7 +78,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                 <Link to="/" className="nav__link active-link" onClick={closeMenu}>Home</Link>
             </li>
             <li className="nav__item">
-                <Link to="/courses" className="nav__link" onClick={closeMenu}>Vastu</Link>
+                <Link to="/vastu" className="nav__link" onClick={closeMenu}>Vastu</Link>
             </li>
             <li className="nav__item">
                 <Link to="/form" className="nav__link" onClick={closeMenu}>Consultation</Link>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Select, Modal } from 'antd';
 import { motion } from 'framer-motion'; // Import framer-motion for animation
 import './Form.css'; // Add external CSS for input styling
@@ -6,17 +6,63 @@ import img1 from './assets/img/ele1.png'; // Import images
 import img2 from './assets/img/ele2.png';
 import img3 from './assets/img/icon.png';
 import { SendOutlined } from '@ant-design/icons';
-
+import ImageTileContainer from './ImageTileContainer-form'
 const { Option } = Select;
 
 const VastuForm = () => {
   const [form] = Form.useForm();
+  const [isMobile, setIsMobile] = useState(false);
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [inputFocus, setInputFocus] = useState({
     name: false,
     phone: false,
     email: false,
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Check once on mount
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const tiles = [
+    {
+      id: 1,
+      image: 'https://cloudimage.homeonline.com/855x451/public/uploads/gallery/articles/14-Vastu-Shastra-Tips-to-Ensure-Safety-of-your-Home.jpg',  // Replace with actual image URL
+      link: '/vastu-for-homes',  // Replace with actual link
+    },
+    {
+      id: 2,
+      image: 'https://limpid.co.in/wp-content/uploads/2020/08/VASTU-SHASTRA-%E2%80%93-THE-SCIENCE-OF-ARCHITECTURE.jpg',  // Replace with actual image URL
+      link: '/vastu-for-office',  // Replace with actual link
+    },
+    {
+      id: 3,
+      image: 'https://cloudimage.homeonline.com/855x451/public/uploads/gallery/articles/8-Important-Vastu-Tips-to-Follow-Before-Purchasing-a-Flat.jpg',  // Replace with actual image URL
+      link: '/vastu-for-shops',  // Replace with actual link
+    },
+    {
+      id: 4,
+      image: 'https://cloudimage.homeonline.com/855x451/public/uploads/gallery/articles/Feasible-Vastu-Changes-to-Bring-Happiness-and-Content-to-Your-Home.jpg',  // Replace with actual image URL
+      link: '/vastu-for-industries',  // Replace with actual link
+    },
+    // {
+    //   id: 5,
+    //   title: 'Land / Plot Selection',
+    //   description: 'Expert advice for selecting Vastu-compliant land or plots.',
+    //   image: 'https://roofandfloor.thehindu.com/raf/real-estate-blog/wp-content/uploads/sites/14/2021/07/Vaastu-Tips-for-Buying-a-Plot.png',  // Replace with actual image URL
+    //   link: '/vastu-for-land',  // Replace with actual link
+    // }
+
+  ];
 
   const handleSubmit = (values) => {
     console.log('Form Values:', values);
@@ -156,17 +202,17 @@ const VastuForm = () => {
   block
   icon={<SendOutlined />}
   style={{
-    backgroundColor: '#4CAF50',
-    borderColor: '#4CAF50',
+    backgroundColor: '#d12336',
+    borderColor: '#ffffff',
     borderRadius: '5px',
     transition: '0.3s',
   }}
   onMouseEnter={(e) => {
-    e.target.style.backgroundColor = '#45a049';
+    e.target.style.backgroundColor = '#FFC107';
     e.target.style.transform = 'scale(1.05)';
   }}
   onMouseLeave={(e) => {
-    e.target.style.backgroundColor = '#4CAF50';
+    e.target.style.backgroundColor = '#FFC107';
     e.target.style.transform = 'scale(1)';
   }}
 >
@@ -186,7 +232,31 @@ const VastuForm = () => {
           <p>Thank you for your submission! We will get back to you shortly.</p>
         </Modal>
       </div>
+
+      {/* <footer className="vastu-footer">
+        <img
+          src={Vastu} // Replace with the actual path to your image
+          alt="Vastu Fact"
+          className="vastu-image"
+          
+         
+        />
+        
+      </footer> */}
+
+      <section  >
+
+
+      <ImageTileContainer tiles={tiles} isMobile={isMobile} />
+      <div style={{ marginTop: '45px' }}></div>
+
+
+</section>
     </section>
+
+
+
+    
   );
 };
 

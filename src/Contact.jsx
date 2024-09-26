@@ -51,7 +51,7 @@ const HomePage = () => {
   <section className="home-contactus" id="home">
     <div className="home__container bd-container bd-grid">
       <div className="home__data">
-        <h3 className="home__title" style={{ color: '#d12336' }}>About Us</h3>
+        <h3 className="home__title" style={{ color: '#d12336' }}>MahaVastu Santulan</h3>
         <h3 className="home__subtitle">The promise to prosperity</h3>
         <h5>Welcome to MahaVastu Santulan, where we harmonize your living spaces with the ancient wisdom of Vastu Shastra. Our mission is to promote well-being and prosperity by aligning the energies of your environment with your personal and professional aspirations. With a team of experienced consultants, we offer personalized Vastu consultations that transform homes and workplaces into sanctuaries of positivity and balance. At MahaVastu Santulan, we believe that a well-designed space can enhance your life, fostering health, happiness, and success. Join us on a journey to create a harmonious living environment that nurtures your mind, body, and spirit.</h5>
         <a href="/form" className="button-consult-mobile">Consult Us now</a>

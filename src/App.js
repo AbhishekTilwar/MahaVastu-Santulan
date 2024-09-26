@@ -21,6 +21,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ImageTileContainer from './ImageTileContainer';
 import CoFounders from './CoFounders';
 import Service from './WhyChooseUs';
+import VastuPage from './VastuPage';
 
 
 
@@ -203,6 +204,7 @@ const App = () => {
             } />
             <Route path="/contact" element={<ContactUs />} /> 
             <Route path="/form" element={<VastuForm />} /> 
+            <Route path="/Vastu" element={<VastuPage />} /> 
 
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

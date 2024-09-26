@@ -1,0 +1,35 @@
+.vastu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .vastu-header {
+    margin-bottom: 20px;
+  }
+  
+  .vastu-gif {
+    width: 100%;
+    height: auto;
+  }
+  
+  .vastu-content {
+    margin-bottom: 20px;
+  }
+  
+  .vastu-footer {
+    margin-top: 20px;
+  }
+  
+  .vastu-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .vastu-fact {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
