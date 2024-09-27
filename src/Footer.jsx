@@ -139,7 +139,9 @@ const Footer = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
       >
-        <p>&copy; 2024 MahaVastu Santulan. All Rights Reserved.</p>
+       <strong><p>&copy; Copyright ©2024 MahaVastu Santulan. </p></strong> 
+       <p> All Rights Reserved | Designed, Developed & Maintained by <a href='https://codingbeyond.in'><strong class="white-text">CodingBeyond</strong></a></p>
+
       </motion.div>
     </footer>
   );

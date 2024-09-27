@@ -1,8 +1,8 @@
 .cofounders-container {
   text-align: center;
   padding: 40px;
-  background-color: #f9f9f9;
-}
+  background-color: #fefefe;
+}  
 
 .cofounders {
   position: relative;
@@ -38,7 +38,9 @@
 
 /* Media Queries for PC size */
 @media (min-width: 768px) {
-  
+  .cofounders-container {
+    padding-bottom: 0px; /* Set padding to 0 for mobile */
+    margin-bottom: -30px;   }
   .cofounders {
     display: flex;
     justify-content: space-around;
@@ -58,4 +60,5 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  
 }

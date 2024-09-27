@@ -1,0 +1,9 @@
+.nav__link {
+    color: #333333; /* Darker color for better readability */
+    transition: color 0.3s ease;
+  }
+  
+  .nav__link:hover {
+    color: #000000; /* Even darker color on hover */
+  }
+  
