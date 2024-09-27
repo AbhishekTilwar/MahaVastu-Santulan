@@ -3,6 +3,8 @@ import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from 'framer-motion';
 import { Button } from 'antd';
+import { PhoneOutlined, MessageOutlined,WhatsAppOutlined , WechatOutlined } from '@ant-design/icons'; 
+import { Tooltip } from 'antd';
 
 import NavBar from './NavBar'; // Import the NavBar component
 import Footer from './Footer'; // Import the Footer component
@@ -57,18 +59,39 @@ const HomePage = () => {
     marginTop: '10px', // Adjust this value based on your NavBar's height
   }}
 ></div>
+
+
     <div className="home__container bd-container bd-grid">
       <div className="home__data">
         <h3 className="home__title" style={{ color: '#d12336' }}>MahaVastu Santulan</h3>
         <h3 className="home__subtitle">The promise to prosperity</h3>
         <h5>Welcome to MahaVastu Santulan, where we harmonize your living spaces with the ancient wisdom of Vastu Shastra. Our mission is to promote well-being and prosperity by aligning the energies of your environment with your personal and professional aspirations. With a team of experienced consultants, we offer personalized Vastu consultations that transform homes and workplaces into sanctuaries of positivity and balance.</h5>
         <a href="/form" className="button-consult-mobile">Consult Us now</a>
-        <div className="parent-element">
-                      <Button href= '/form' type="primary" shape="round" size="large" className="animated-button">
-                        Contact Us
-                      </Button>
-                    </div>
+        <div className="button-container">
+    <Tooltip title="Call us">
+      <Button 
+        type="primary" 
+        shape="circle" 
+        icon={<PhoneOutlined />} 
+        className="animated-button"
+      />
+    </Tooltip>
+    <Tooltip title="Chat with us">
+      <Button 
+        type="primary" 
+        shape="circle" 
+        icon={<WhatsAppOutlined />} 
+        style={{ backgroundColor: '#25D366', borderColor: '#25D366' }} 
+        className="animated-button"
+      />
+    </Tooltip>
+  </div>
+
+
+      
+                   
       </div>
+      
     </div>
   </section>
 
@@ -87,9 +110,11 @@ const HomePage = () => {
         ></iframe>
       </div>
     </div>
+
+    
   </section>
 
-
+  
 </main>
 
 

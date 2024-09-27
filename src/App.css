@@ -1547,3 +1547,22 @@ img{
   font-family: 'Arial', sans-serif; /* Change to your preferred professional font */
   padding: 20px; /* Adjust padding as needed */
 }
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.animated-button {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

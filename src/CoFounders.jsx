@@ -36,7 +36,7 @@ const CoFounders = () => {
 
   return (
     <div className="cofounders-container">
-      <h2>Meet Our Co-Founders</h2>
+      <h2 className="section-title">Meet Our Co-Founders</h2>
       <div className={`cofounders ${window.innerWidth < 768 ? 'mobile' : ''}`}>
         {cofounders.map((cofounder, index) => (
           <div

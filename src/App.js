@@ -3,7 +3,7 @@ import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from 'framer-motion';
 import { Tooltip, Popover, Button } from 'antd';
-import { PhoneOutlined, MessageOutlined, WechatOutlined } from '@ant-design/icons'; 
+import { PhoneOutlined, MessageOutlined,WhatsAppOutlined , WechatOutlined } from '@ant-design/icons'; 
 import MainGif from './assets/img/Main.gif';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import NavBar from './NavBar';
@@ -58,8 +58,7 @@ const App = () => {
   const contactContent = (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Tooltip title="Chat with us">
-        <Button type="primary" shape="circle" icon={<MessageOutlined />} style={{ marginBottom: '10px' }} />
-      </Tooltip>
+      <Button type="primary" shape="circle" icon={<WhatsAppOutlined />} style={{ marginBottom: '10px', backgroundColor: '#25D366', borderColor: '#25D366' }} />      </Tooltip>
       <Tooltip title="Call us">
         <Button type="primary" shape="circle" icon={<PhoneOutlined />} />
       </Tooltip>
@@ -135,7 +134,7 @@ const App = () => {
                     >
                     </motion.div>
 
-                    <h2 style={{ paddingTop: '10px' }}>VASTU CONSULTATION</h2>
+                    <h2 className="section-title" style={{ paddingTop: '10px' }}>Vastu Consultation</h2>
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -168,6 +167,7 @@ const App = () => {
                       </p>
                     </motion.div>
                   </section>
+                  <Divider />
 
                   <Service />
 
@@ -179,6 +179,8 @@ const App = () => {
                   >
                     <CustomerReviews />
                   </motion.div>
+                  <Divider />
+
                 </main>
               }
             />
@@ -200,15 +202,24 @@ const App = () => {
                 right: '20px', 
                 zIndex: 1000, 
                 boxShadow: '0 4px 8px rgba(0,0,0,0.2)', 
-                width: '65px',  
-                height: '65px',
+                width: '55px',  
+                height: '55px',
                 backgroundColor:'#ffb401',
                 lineHeight: '60px', 
-                animation: 'blink 2.5s infinite',
+                animation: 'blink 1.5s infinite',
                 color:'#ffb401'
               }} 
             />
           </Popover>
+          <style>
+            {`
+              @keyframes blink {
+                0% { opacity: 1; }
+                50% { opacity: 0.5; }
+                100% { opacity: 1; }
+              }
+            `}
+          </style>
         </Router>
       )}
     </div>
