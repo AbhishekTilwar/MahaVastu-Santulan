@@ -898,11 +898,11 @@ img{
   }
   .home {
     position: relative;
-    background-image: url('https://t3.ftcdn.net/jpg/05/95/73/48/360_F_595734872_3kTTgRe8VBqosZL5m6eeEpp28tFpESjh.jpg');
+    background-image: url('https://anarghyaa.com/cdn/shop/products/anarghyaa-vastu-consultation_480x480.jpg?v=1576556294');
     background-size: cover;
     background-position: center;
     background-attachment: absolute; /* Optional for parallax */
-    height: 600px;
+    height: 530px;
   }
   .home-contactus  {
     position: relative;
@@ -1117,7 +1117,7 @@ img{
             .home {
               padding-top: 0.1px;
               position: relative;
-              background-image: url('https://www.vastuquest.com/wp-content/uploads/2024/06/Vastu-Compass-1024x500.webp');
+              background-image: url('https://vastu-samadhan.com/wp-content/uploads/2020/02/Vastu-Shastra.gif');
               background-size: cover;
               background-position: center;
               background-attachment: absolute; /* Optional for parallax */

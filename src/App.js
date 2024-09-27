@@ -22,6 +22,8 @@ import ImageTileContainer from './ImageTileContainer';
 import CoFounders from './CoFounders';
 import Service from './WhyChooseUs';
 import VastuPage from './VastuPage';
+import { Divider } from 'antd';
+
 
 
 
