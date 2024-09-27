@@ -188,9 +188,23 @@ const VastuForm = () => {
               rules={[{ required: true, message: 'Please select a Vastu service' }]}
             >
               <Select placeholder="Select a service">
-                <Option value="home">Home Consultation</Option>
-                <Option value="office">Office Consultation</Option>
-                <Option value="shop">Shop Consultation</Option>
+              <Option value="house-check">Vastu Check For House</Option>
+    <Option value="house-evaluation">Detailed Vastu Evaluation For House</Option>
+    <Option value="plot-selection">Vastu For Plot Selection</Option>
+    <Option value="plot-solution">Vastu Solution for Plot</Option>
+    <Option value="office-check">Vastu Check For Office & Commercial Places</Option>
+    <Option value="office-planning">Vastu Planning for Office & Commercial Places</Option>
+    <Option value="office-evaluation">Detailed Vastu Evaluation For Office & Commercial Places</Option>
+    <Option value="factory-vastu">Vastu For Factory</Option>
+    <Option value="factory-evaluation">Detailed Vastu Evaluation For Factory</Option>
+    <Option value="factory-planning">Vastu Planning & Design For Factory</Option>
+    <Option value="flat-check">Vastu Check For Flat Selection</Option>
+    <Option value="flat-evaluation">Detailed Vastu Evaluation For Flat / Apartments</Option>
+    <Option value="flat-planning">Vastu Planning and Design</Option>
+    <Option value="astro-vastu">Astro Vastu Consultancy</Option>
+    <Option value="numerology">Numerology Consultation</Option>
+    <Option value="astrology">Personal Astrology & Horoscope Consultation</Option>
+    <Option value="other">Other</Option>
                 <Option value="factory">Factory Consultation</Option>
               </Select>
             </Form.Item>

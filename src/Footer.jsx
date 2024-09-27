@@ -55,7 +55,7 @@ const Footer = () => {
             className="footer-link"
           >
             <Tippy content="Know more about us" placement="top">
-              <a href="#about">About Vastu</a>
+              <a href="/vastu">About Vastu</a>
             </Tippy>
           </motion.li>
           <motion.li
@@ -66,7 +66,7 @@ const Footer = () => {
             className="footer-link"
           >
             <Tippy content="Get expert advice" placement="top">
-              <a href="#services">Consultation</a>
+              <a href="/form">Consultation</a>
             </Tippy>
           </motion.li>
           <motion.li
