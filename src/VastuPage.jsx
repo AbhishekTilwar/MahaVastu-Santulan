@@ -2,6 +2,7 @@ import React from 'react';
 import './VastuPage.css'; // Ensure you create this CSS file for styling
 import GIF from './assets/img/Main.gif'
 import Vastu from './assets/img/vastu1.jpg'
+import FAQ from './FAQ/faq'; // Adjust the import path accordingly
 
 const VastuPage = () => {
   return (
@@ -35,10 +36,14 @@ const VastuPage = () => {
           className="vastu-image"
          
         />
+        <footer>
         <p className="vastu-fact">
           Did you know? A well-structured Vastu-compliant home can significantly enhance the prosperity and well-being of its inhabitants.
         </p>
+        <p></p>
+        </footer>
       </footer>
+      <FAQ/>
     </div>
   );
 };
