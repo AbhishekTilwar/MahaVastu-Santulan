@@ -1,10 +1,6 @@
 import React from 'react';
 import { Carousel } from 'antd';
 import './ImageTileContainer.css';
-import { Link } from 'react-router-dom';
-import AOS from 'aos'; // If using AOS library
-import 'aos/dist/aos.css'; // Import AOS styles
-
 
 const ImageTileContainer = ({ tiles }) => {
   // Check if it's a mobile screen
@@ -31,23 +27,19 @@ const ImageTileContainer = ({ tiles }) => {
       ) : (
         // For desktop, use a responsive grid
         <div className="tiles-grid">
-        {tiles.map(tile => (
-          <Link to={`/page/${tile.id}`} key={tile.id}>
-            <div
-              className="fancy-tile-container"
-              data-aos="fade-up" // AOS animation on scroll
-            >
+          {tiles.map(tile => (
+            <div key={tile.id} className="fancy-tile-container">
               <div className="fancy-image-overlay">
                 <img src={tile.image} alt={tile.title} className="fancy-tile-image" />
                 <div className="text-overlay">
                   <h2>{tile.title}</h2>
                   <p>{tile.description}</p>
+                  <a href={tile.link} className="tile-button">Know More</a>
                 </div>
               </div>
             </div>
-          </Link>
-        ))}
-      </div>
+          ))}
+        </div>
       )}
     </div>
   );

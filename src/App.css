@@ -1567,23 +1567,3 @@ img{
   }
 }
 
-
-.ant-select-selector {
-  border: 2px solid #d12336; /* Red border for select */
-  border-radius: 5px;
-}
-
-.ant-card {
-  border-radius: 8px; /* Rounded corners for cards */
-}
-
-.ant-card-bordered {
-  border: 2px solid #FFC107; /* Chrome yellow border for cards */
-}
-
-.ant-spin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Center loading spinner */
-}
