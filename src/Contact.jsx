@@ -74,6 +74,7 @@ const HomePage = () => {
         shape="circle" 
         icon={<PhoneOutlined />} 
         className="animated-button"
+        
       />
     </Tooltip>
     <Tooltip title="Chat with us">

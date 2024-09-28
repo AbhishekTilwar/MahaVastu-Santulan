@@ -125,48 +125,49 @@ const App = () => {
                   <CoFounders />
                   <Divider />
 
-                  <section className="tiles-section">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                    </motion.div>
+                  <section className="tiles-section" style={{ maxWidth: '1350px', margin: '0 auto' }}>
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+  >
+  </motion.div>
 
-                    <h2 className="section-title" style={{ paddingTop: '10px' }}>Vastu Consultation</h2>
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <ImageTileContainer tiles={tiles} isMobile={isMobile} />
-                    </motion.div>
+  <h2 className="section-title" style={{ paddingTop: '10px' }}>Vastu Consultation</h2>
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+  >
+    <ImageTileContainer tiles={tiles} isMobile={isMobile} />
+  </motion.div>
 
-                    <div className="parent-element">
-                      <Button href="/form" type="primary" shape="round" size="large" className="animated-button">
-                        Consult Us now
-                      </Button>
-                    </div>
+  <div className="parent-element">
+    <Button href="/form" type="primary" shape="round" size="large" className="animated-button">
+      Consult Us now
+    </Button>
+  </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, x: -100 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8 }}
-                      viewport={{ once: true }}
-                      className="vastu-solutions"
-                    >
-                      <h1>Unlock the Power of Positive Energy with Expert Vastu Solutions</h1>
-                      <p>
-                        At <strong>MahaVastu Santulan</strong>, we combine the ancient wisdom of Vastu Shastra 
-                        with modern architectural expertise to help you create harmonious spaces that nurture 
-                        your well-being and success. With a deep understanding of both traditional Vastu principles 
-                        and contemporary design practices, our team of seasoned Vastu consultants is dedicated 
-                        to transforming your living and working environments into sanctuaries of peace and prosperity.
-                      </p>
-                    </motion.div>
-                  </section>
+  <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="vastu-solutions"
+  >
+    <h1>Unlock the Power of Positive Energy with Expert Vastu Solutions</h1>
+    <p>
+      At <strong>MahaVastu Santulan</strong>, we combine the ancient wisdom of Vastu Shastra 
+      with modern architectural expertise to help you create harmonious spaces that nurture 
+      your well-being and success. With a deep understanding of both traditional Vastu principles 
+      and contemporary design practices, our team of seasoned Vastu consultants is dedicated 
+      to transforming your living and working environments into sanctuaries of peace and prosperity.
+    </p>
+  </motion.div>
+</section>
+
                   <Divider />
 
                   <Service />
