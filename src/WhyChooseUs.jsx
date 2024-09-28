@@ -1,20 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './WhyChooseUs.css'; // Import the CSS file for styling
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
 import { TeamOutlined, BulbOutlined, GoldOutlined, FlagOutlined } from '@ant-design/icons';
 
 const WhyChooseUs = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Initialize AOS, animations last for 1000ms
-  }, []);
-
   return (
     <section className="why-choose-us section bd-container" id="why-choose-us">
-      <h2 className="section-title" data-aos="fade-up">Why Choose Us?</h2>
+      <h2 className="section-title">Why Choose Us?</h2>
       <div className="why-choose-us__containers bd-grid">
         
-        <div className="why-choose-us__content" data-aos="fade-right">
+        <div className="why-choose-us__content">
           <TeamOutlined className="why-choose-us__icon" />
           <h3 className="why-choose-us__name">Expertise Backed by Experience</h3>
           <p className="why-choose-us__detail">
@@ -22,7 +16,7 @@ const WhyChooseUs = () => {
           </p>
         </div>
 
-        <div className="why-choose-us__content" data-aos="fade-left">
+        <div className="why-choose-us__content">
           <BulbOutlined className="why-choose-us__icon" />
           <h3 className="why-choose-us__name">Personalized Vastu Solutions</h3>
           <p className="why-choose-us__detail">
@@ -30,7 +24,7 @@ const WhyChooseUs = () => {
           </p>
         </div>
 
-        <div className="why-choose-us__content" data-aos="fade-right">
+        <div className="why-choose-us__content">
           <GoldOutlined className="why-choose-us__icon" />
           <h3 className="why-choose-us__name">Proven Results</h3>
           <p className="why-choose-us__detail">
@@ -38,7 +32,7 @@ const WhyChooseUs = () => {
           </p>
         </div>
 
-        <div className="why-choose-us__content" data-aos="fade-left">
+        <div className="why-choose-us__content">
           <FlagOutlined className="why-choose-us__icon" />
           <h3 className="why-choose-us__name">Commitment to Quality</h3>
           <p className="why-choose-us__detail">

@@ -1,9 +1,75 @@
-.nav__link {
-    color: #333333; /* Darker color for better readability */
-    transition: color 0.3s ease;
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 100vw; /* Set to full viewport width */
+    position: fixed; /* Keep it fixed at the top */
+    left: 0; /* Align to the left */
+    z-index: var(--z-fixed); /* Ensure it appears above other content */
   }
-  
-  .nav__link:hover {
-    color: #000000; /* Even darker color on hover */
+
+  .navbar-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%; /* Ensure menu takes full width */
+    padding: 1.5rem 0 1rem;
+    text-align: center;
+    background-color: var(--body-color);
+    transition: .4s;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+    border-radius: 0 0 1rem 1rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   }
-  
+
+  .navbar-menu.show-menu {
+    top: 60px; /* Adjust this value to move it down */
+    max-height: 300px; /* Adjust based on your menu size */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar-item {
+    margin-top: 18px;
+    margin: 0.5rem 0;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+    transform: 0.3s ease-in-out;
+  }
+
+  .navbar-item.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .navbar-menu.show-menu .navbar-item {
+    opacity: 1;
+  }
+
+  .bd-container_main {
+    max-width: 100%;
+    padding-top: 0.25rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tiles-section {
+    background-color: #f9f9f9;
+  }
+}
+
+/* PC Styles */
+.navbar {
+  max-width: 1480px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-icon {
+  width: 40px; /* Fixed width for icons */
+}

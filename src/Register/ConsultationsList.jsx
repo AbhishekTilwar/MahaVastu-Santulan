@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from './firebase'; // Adjust the path as per your project structure
+import { db } from '../firebase'; // Adjust the path as per your project structure
 import { Select, Input, Row, Col, Card, Spin, Button } from 'antd';
 import { 
   FilterOutlined, 
@@ -80,7 +80,7 @@ const ConsultationsList = () => {
 
   return (
     
-    <div style={{ padding: '20px' }}>
+    <div>
 
 <div
   style={{

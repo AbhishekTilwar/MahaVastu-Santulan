@@ -1,0 +1,26 @@
+
+
+body {
+    background-color: #f5f5f5; /* Light background for contrast */
+  }
+  
+  h1 {
+    color: #d12336; /* Red color for headings */
+  }
+
+.ant-card {
+    transition: transform 0.3s;
+  }
+  
+  .ant-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .ant-select {
+    width: 200px;
+  }
+  
+  .ant-input-search {
+    width: 300px;
+  }
+  

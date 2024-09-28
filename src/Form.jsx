@@ -71,7 +71,6 @@ const VastuForm = () => {
 
 <div
   style={{
-
     marginTop: '60px', // Adjust this value based on your NavBar's height
   }}
 ></div>
