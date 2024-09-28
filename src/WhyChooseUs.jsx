@@ -1,13 +1,40 @@
-import React from 'react';
-import './WhyChooseUs.css'; // Import the CSS file for styling
+import React, { useEffect, useRef } from 'react';
+import './WhyChooseUs.css';
 import { TeamOutlined, BulbOutlined, GoldOutlined, FlagOutlined } from '@ant-design/icons';
 
 const WhyChooseUs = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const contentBlocks = section.querySelectorAll('.why-choose-us__content');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is in view
+    );
+
+    contentBlocks.forEach(block => {
+      observer.observe(block);
+    });
+
+    return () => {
+      contentBlocks.forEach(block => observer.unobserve(block));
+    };
+  }, []);
+
   return (
-    <section className="why-choose-us section bd-container" id="why-choose-us">
+    <section className="why-choose-us section bd-container" id="why-choose-us" ref={sectionRef}>
       <h2 className="section-title">Why Choose Us?</h2>
       <div className="why-choose-us__containers bd-grid">
-        
         <div className="why-choose-us__content">
           <TeamOutlined className="why-choose-us__icon" />
           <h3 className="why-choose-us__name">Expertise Backed by Experience</h3>
@@ -39,7 +66,6 @@ const WhyChooseUs = () => {
             We are committed to delivering the highest standards of service. Our meticulous approach ensures that every consultation is thorough, professional, and tailored to meet your specific needs.
           </p>
         </div>
-
       </div>
     </section>
   );
