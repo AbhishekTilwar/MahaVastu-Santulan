@@ -84,8 +84,7 @@ const ConsultationsList = () => {
 
 <div
   style={{
-    margin: '0 auto',
-  
+    margin: '0 auto',  
     marginTop: '60px', // Adjust this value based on your NavBar's height
   }}
 ></div>
