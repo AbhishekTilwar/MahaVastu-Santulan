@@ -10,7 +10,7 @@ const defaultAvatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf
 
 const initialReviews = [
   {
-    name: 'John Doe',
+    name: 'Rakesh Sharma',
     review: 'The Vastu consultation has been life-changing! I felt a positive energy shift in my home.',
     rating: 5,
     date: 'July 22, 2023',

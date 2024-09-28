@@ -18,6 +18,7 @@ import CoFounders from './CoFounders';
 import Service from './WhyChooseUs';
 import VastuPage from './VastuPage';
 import { Divider } from 'antd';
+import ConsultationsList from './ConsultationsList'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -188,6 +189,9 @@ const App = () => {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/form" element={<VastuForm />} />
             <Route path="/Vastu" element={<VastuPage />} />
+            
+            <Route path="/ConsultationsList" element={<ConsultationsList />} />
+
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           <Footer />
