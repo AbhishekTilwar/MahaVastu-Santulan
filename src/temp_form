@@ -1,0 +1,277 @@
+import React, { useState, useEffect } from 'react';
+import { Form, Input, Button, Select, Modal } from 'antd';
+import { motion } from 'framer-motion'; // Import framer-motion for animation
+import './Form.css'; // Add external CSS for input styling
+import img1 from './assets/img/ele1.png'; // Import images
+import img2 from './assets/img/ele2.png';
+import img3 from './assets/img/icon.png';
+import { SendOutlined } from '@ant-design/icons';
+import ImageTileContainer from './ImageTileContainer-form'
+const { Option } = Select;
+
+const VastuForm = () => {
+  const [form] = Form.useForm();
+  const [isMobile, setIsMobile] = useState(false);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [inputFocus, setInputFocus] = useState({
+    name: false,
+    phone: false,
+    email: false,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Check once on mount
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const tiles = [
+    {
+      id: 1,
+      image: 'https://cloudimage.homeonline.com/855x451/public/uploads/gallery/articles/14-Vastu-Shastra-Tips-to-Ensure-Safety-of-your-Home.jpg',  // Replace with actual image URL
+      link: '/vastu-for-homes',  // Replace with actual link
+    },
+    {
+      id: 2,
+      image: 'https://limpid.co.in/wp-content/uploads/2020/08/VASTU-SHASTRA-%E2%80%93-THE-SCIENCE-OF-ARCHITECTURE.jpg',  // Replace with actual image URL
+      link: '/vastu-for-office',  // Replace with actual link
+    },
+    {
+      id: 3,
+      image: 'https://cloudimage.homeonline.com/855x451/public/uploads/gallery/articles/8-Important-Vastu-Tips-to-Follow-Before-Purchasing-a-Flat.jpg',  // Replace with actual image URL
+      link: '/vastu-for-shops',  // Replace with actual link
+    },
+    {
+      id: 4,
+      image: 'https://cloudimage.homeonline.com/855x451/public/uploads/gallery/articles/Feasible-Vastu-Changes-to-Bring-Happiness-and-Content-to-Your-Home.jpg',  // Replace with actual image URL
+      link: '/vastu-for-industries',  // Replace with actual link
+    },
+    // {
+    //   id: 5,
+    //   title: 'Land / Plot Selection',
+    //   description: 'Expert advice for selecting Vastu-compliant land or plots.',
+    //   image: 'https://roofandfloor.thehindu.com/raf/real-estate-blog/wp-content/uploads/sites/14/2021/07/Vaastu-Tips-for-Buying-a-Plot.png',  // Replace with actual image URL
+    //   link: '/vastu-for-land',  // Replace with actual link
+    // }
+
+  ];
+
+  const handleSubmit = (values) => {
+    console.log('Form Values:', values);
+    setIsModalVisible(true);
+  };
+
+  const handleModalOk = () => {
+    setIsModalVisible(false);
+    form.resetFields();
+  };
+
+  const handleModalCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  return (
+    <section>
+      <div
+  style={{
+    maxWidth: '600px',
+    margin: '0 auto',
+    padding: '20px',
+    marginTop: '60px', // Adjust this value based on your NavBar's height
+  }}
+></div>
+      <div className="image-container">
+        <motion.img
+          src={img1}
+          alt="Image 1"
+          className="animated-image left-image"
+          initial={{ x: '-100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        />
+        <motion.img
+          src={img3}
+          alt="Image 3"
+          className="animated-image center-image"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        />
+        <motion.img
+          src={img2}
+          alt="Image 2"
+          className="animated-image right-image"
+          initial={{ x: '100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        />
+      </div>
+
+      <div
+        style={{
+          maxWidth: '600px',
+          margin: '0 auto',
+          padding: '20px',
+        }}
+      >
+        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+          Get Vastu Consultation
+        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Form
+            form={form}
+            layout="vertical"
+            onFinish={handleSubmit}
+            initialValues={{ service: 'home' }}
+          >
+            {/* Full Name Input with Floating Label */}
+            <div className="input-wrapper">
+              <Input
+                type="text"
+                id="name"
+                placeholder=" "
+                onFocus={() => setInputFocus({ ...inputFocus, name: true })}
+                onBlur={() => setInputFocus({ ...inputFocus, name: false })}
+                className={`input-field ${inputFocus.name ? 'focused' : ''}`}
+              />
+              <label htmlFor="name" className={`input-label ${inputFocus.name ? 'input-focused' : ''}`}>
+                Full Name
+              </label>
+            </div>
+
+            {/* Phone Number Input with Floating Label */}
+            <div className="input-wrapper">
+              <Input
+                type="text"
+                id="phone"
+                placeholder=" "
+                onFocus={() => setInputFocus({ ...inputFocus, phone: true })}
+                onBlur={() => setInputFocus({ ...inputFocus, phone: false })}
+                className={`input-field ${inputFocus.phone ? 'focused' : ''}`}
+              />
+              <label htmlFor="phone" className={`input-label ${inputFocus.phone ? 'input-focused' : ''}`}>
+                Phone Number
+              </label>
+            </div>
+
+            {/* Email Input with Floating Label */}
+            <div className="input-wrapper">
+              <Input
+                type="email"
+                id="email"
+                placeholder=" "
+                onFocus={() => setInputFocus({ ...inputFocus, email: true })}
+                onBlur={() => setInputFocus({ ...inputFocus, email: false })}
+                className={`input-field ${inputFocus.email ? 'focused' : ''}`}
+              />
+              <label htmlFor="email" className={`input-label ${inputFocus.email ? 'input-focused' : ''}`}>
+                Email Address
+              </label>
+            </div>
+
+            {/* Vastu Service Select */}
+            <Form.Item
+              label="Vastu Service"
+              name="service"
+              rules={[{ required: true, message: 'Please select a Vastu service' }]}
+            >
+              <Select placeholder="Select a service">
+              <Option value="house-check">Vastu Check For House</Option>
+    <Option value="house-evaluation">Detailed Vastu Evaluation For House</Option>
+    <Option value="plot-selection">Vastu For Plot Selection</Option>
+    <Option value="plot-solution">Vastu Solution for Plot</Option>
+    <Option value="office-check">Vastu Check For Office & Commercial Places</Option>
+    <Option value="office-planning">Vastu Planning for Office & Commercial Places</Option>
+    <Option value="office-evaluation">Detailed Vastu Evaluation For Office & Commercial Places</Option>
+    <Option value="factory-vastu">Vastu For Factory</Option>
+    <Option value="factory-evaluation">Detailed Vastu Evaluation For Factory</Option>
+    <Option value="factory-planning">Vastu Planning & Design For Factory</Option>
+    <Option value="flat-check">Vastu Check For Flat Selection</Option>
+    <Option value="flat-evaluation">Detailed Vastu Evaluation For Flat / Apartments</Option>
+    <Option value="flat-planning">Vastu Planning and Design</Option>
+    <Option value="astro-vastu">Astro Vastu Consultancy</Option>
+    <Option value="numerology">Numerology Consultation</Option>
+    <Option value="astrology">Personal Astrology & Horoscope Consultation</Option>
+    <Option value="other">Other</Option>
+                <Option value="factory">Factory Consultation</Option>
+              </Select>
+            </Form.Item>
+
+            <Form.Item>
+            <Button
+  type="primary"
+  htmlType="submit"
+  block
+  icon={<SendOutlined />}
+  style={{
+    backgroundColor: '#d12336',
+    borderColor: '#ffffff',
+    borderRadius: '5px',
+    transition: '0.3s',
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.backgroundColor = '#FFC107';
+    e.target.style.transform = 'scale(1.05)';
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.backgroundColor = '#FFC107';
+    e.target.style.transform = 'scale(1)';
+  }}
+>
+  Submit
+</Button>
+
+            </Form.Item>
+          </Form>
+        </motion.div>
+
+        <Modal
+          title="Submission Successful"
+          visible={isModalVisible}
+          onOk={handleModalOk}
+          onCancel={handleModalCancel}
+        >
+          <p>Thank you for your submission! We will get back to you shortly.</p>
+        </Modal>
+      </div>
+
+      {/* <footer className="vastu-footer">
+        <img
+          src={Vastu} // Replace with the actual path to your image
+          alt="Vastu Fact"
+          className="vastu-image"
+          
+         
+        />
+        
+      </footer> */}
+
+      <section  >
+
+
+      <ImageTileContainer tiles={tiles} isMobile={isMobile} />
+      <div style={{ marginTop: '45px' }}></div>
+
+
+</section>
+    </section>
+
+
+
+    
+  );
+};
+
+export default VastuForm;  I want to connect this form to firestore database

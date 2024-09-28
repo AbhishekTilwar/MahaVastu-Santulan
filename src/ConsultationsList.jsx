@@ -73,13 +73,22 @@ const ConsultationsList = () => {
 
   // Display loading state if data is still being fetched
   if (loading) {
-    return <div style={{ textAlign: 'center', marginTop: '50px' }}><Spin size="large" /></div>;
+    return <div style={{ textAlign: 'center', marginTop: '20px' }}><Spin size="large" /></div>;
   }
 
   const consultationsToDisplay = filteredConsultations();
 
   return (
+    
     <div style={{ padding: '20px' }}>
+
+<div
+  style={{
+    margin: '0 auto',
+  
+    marginTop: '60px', // Adjust this value based on your NavBar's height
+  }}
+></div>
       <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Consultations List</h1>
 
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>

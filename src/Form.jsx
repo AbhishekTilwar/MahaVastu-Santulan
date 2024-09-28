@@ -68,6 +68,41 @@ const VastuForm = () => {
 
   return (
     <section>
+
+<div
+  style={{
+    margin: '0 auto',
+    padding: '20px',
+    marginTop: '60px', // Adjust this value based on your NavBar's height
+  }}
+></div>
+
+<div className="image-container">
+        <motion.img
+          src={img1}
+          alt="Image 1"
+          className="animated-image left-image"
+          initial={{ x: '-100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        />
+        <motion.img
+          src={img3}
+          alt="Image 3"
+          className="animated-image center-image"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        />
+        <motion.img
+          src={img2}
+          alt="Image 2"
+          className="animated-image right-image"
+          initial={{ x: '100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        />
+      </div>
       {/* Your existing form layout and images */}
       <div
         style={{
@@ -96,17 +131,26 @@ const VastuForm = () => {
     name="name"
     rules={[{ required: true, message: 'Please enter your full name' }]}
   >
-    <Input placeholder="Enter your full name" />
+    <Input placeholder="Enter your full name"
+    onFocus={() => setInputFocus({ ...inputFocus, phone: true })}
+    onBlur={() => setInputFocus({ ...inputFocus, phone: false })}
+    className={`input-field ${inputFocus.phone ? 'focused' : ''}`} />
   </Form.Item>
 
   {/* Phone Number Input */}
   <Form.Item
-    label="Phone Number"
-    name="phone"
-    rules={[{ required: true, message: 'Please enter your phone number' }]}
-  >
-    <Input placeholder="Enter your phone number" />
-  </Form.Item>
+  label="Phone Number"
+  name="phone"
+  rules={[{ required: true, message: 'Please enter your phone number' }]}
+>
+  <Input
+    placeholder="Enter your phone number"
+    onFocus={() => setInputFocus({ ...inputFocus, phone: true })}
+    onBlur={() => setInputFocus({ ...inputFocus, phone: false })}
+    className={`input-field ${inputFocus.phone ? 'focused' : ''}`}
+  />
+</Form.Item>
+
 
   {/* Email Input */}
   <Form.Item
@@ -117,7 +161,11 @@ const VastuForm = () => {
       { type: 'email', message: 'Please enter a valid email address' },
     ]}
   >
-    <Input placeholder="Enter your email" />
+    <Input placeholder="Enter your email"
+    onFocus={() => setInputFocus({ ...inputFocus, phone: true })}
+    onBlur={() => setInputFocus({ ...inputFocus, phone: false })}
+    className={`input-field ${inputFocus.phone ? 'focused' : ''}`}
+     />
   </Form.Item>
 
   {/* Vastu Service Select */}
@@ -148,7 +196,21 @@ const VastuForm = () => {
   </Form.Item>
 
   <Form.Item>
-    <Button type="primary" htmlType="submit" block icon={<SendOutlined />}>
+    <Button type="primary" htmlType="submit" block icon={<SendOutlined/>}
+    style={{
+      backgroundColor: '#d12336',
+      borderColor: '#ffffff',
+      borderRadius: '5px',
+      transition: '0.3s',
+    }}
+    onMouseEnter={(e) => {
+      e.target.style.backgroundColor = '#FFC107';
+      e.target.style.transform = 'scale(1.05)';
+    }}
+    onMouseLeave={(e) => {
+      e.target.style.backgroundColor = '#d12336';
+      e.target.style.transform = 'scale(1)';
+    }}>
       Submit
     </Button>
   </Form.Item>
