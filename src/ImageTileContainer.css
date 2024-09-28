@@ -4,26 +4,10 @@
     overflow: hidden;
     border-radius: 15px;
     padding-left: px;
-    transition: transform 0.3s ease-in-out;
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-.fancy-tile-container:hover {
-    transform: scale(1.05);
-  }
-  
-  
 /* Maintain 3:2 ratio for the image container */
 .fancy-image-overlay {
     position: relative;
@@ -40,11 +24,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
 }
-.fancy-tile-container:hover .fancy-tile-image {
-    transform: scale(1.1);
-  }
 
 /* Text overlay styling */
 .text-overlay {
@@ -58,9 +38,7 @@
     padding: 10px;
     border-radius: 5px;
     max-width: 80%; /* Restrict the width of the text */
-    max-height: 80%;
     word-wrap: break-word;
-    transition: opacity 0.3s ease-in-out;
 }
 
 .text-overlay h2 {
@@ -99,8 +77,6 @@
     gap: 20px;
     margin-top: 20px;
     padding: 0 20px;
-    animation: fadeIn 1s ease-in-out;
-
 }
 
 /* Carousel container for mobile */

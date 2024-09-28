@@ -73,18 +73,16 @@ const ConsultationsList = () => {
 
   // Display loading state if data is still being fetched
   if (loading) {
-    return <div style={{ textAlign: 'center', marginTop: '20px' }}><Spin size="large" /></div>;
+    return <div style={{ textAlign: 'center', marginTop: '50px' }}><Spin size="large" /></div>;
   }
 
   const consultationsToDisplay = filteredConsultations();
 
   return (
-    
-    <div>
-
-<div
+    <div style={{ padding: '20px' }}>
+      <div
   style={{
-    marginTop: '60px', // Adjust this value based on your NavBar's height
+    marginTop: '70px', // Adjust this value based on your NavBar's height
   }}
 ></div>
       <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Consultations List</h1>
@@ -109,10 +107,11 @@ const ConsultationsList = () => {
               onChange={handleFilterChange}
               suffixIcon={<FilterOutlined />} // Adding filter icon to the select dropdown
             >
-              <Option value="all">All Data</Option>
               <Option value="today">Today</Option>
               <Option value="last7days">Last 7 Days</Option>
               <Option value="last30days">Last 30 Days</Option>
+              <Option value="all">All Data</Option>
+
             </Select>
           </Col>
         </Row>
