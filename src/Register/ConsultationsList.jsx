@@ -81,10 +81,10 @@ const ConsultationsList = () => {
   return (
     <div style={{ padding: '20px' }}>
       <div
-  style={{
-    marginTop: '70px', // Adjust this value based on your NavBar's height
-  }}
-></div>
+        style={{
+          marginTop: '70px', // Adjust this value based on your NavBar's height
+        }}
+      ></div>
       <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Consultations List</h1>
 
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
@@ -96,7 +96,6 @@ const ConsultationsList = () => {
               onChange={handleSearchChange}
               style={{ width: '100%' }}
               enterButton={<SearchOutlined />}
-              
             />
           </Col>
 
@@ -111,7 +110,6 @@ const ConsultationsList = () => {
               <Option value="last7days">Last 7 Days</Option>
               <Option value="last30days">Last 30 Days</Option>
               <Option value="all">All Data</Option>
-
             </Select>
           </Col>
         </Row>
@@ -130,8 +128,14 @@ const ConsultationsList = () => {
                 hoverable
                 extra={<InfoCircleOutlined />} // Adding info icon for details
               >
-                <p><MailOutlined /> Email: {consultation.email}</p>
-                <p><PhoneOutlined /> Phone: {consultation.phone}</p>
+                <p>
+                  <MailOutlined /> 
+                  Email: <a href={`mailto:${consultation.email}`}>{consultation.email}</a> {/* Email link */}
+                </p>
+                <p>
+                  <PhoneOutlined /> 
+                  Phone: <a href={`tel:${consultation.phone}`}>{consultation.phone}</a> {/* Phone link */}
+                </p>
                 <p><SolutionOutlined /> Service: {consultation.service}</p>
                 <p><CalendarOutlined /> Date: {new Date(consultation.createdAt.seconds * 1000).toLocaleDateString()}</p>
               </Card>
