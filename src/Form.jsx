@@ -92,13 +92,13 @@ const VastuForm = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         />
-        <motion.img
+          <motion.img
           src={img2}
-          alt="Image 2"
-          className="animated-image right-image"
-          initial={{ x: '100%', opacity: 0 }}
+          alt="Image 1"
+          className="animated-image left-image"
+          initial={{ x: '-100%', opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.5 }}
         />
       </div>
       {/* Your existing form layout and images */}
