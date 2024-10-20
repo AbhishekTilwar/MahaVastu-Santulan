@@ -19,6 +19,9 @@ import Service from './WhyChooseUs';
 import VastuPage from './VastuPage';
 import { Divider } from 'antd';
 import ConsultationsList from './Register/ConsultationsList'
+import heroImage from './assets/img/hero_logo.svg'
+import Intro from './Intro/Intro'
+import FAQ from './FAQ/faq';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,6 +58,46 @@ const App = () => {
     }
   }, [darkMode]);
 
+  const [currentWord, setCurrentWord] = useState('Health');
+  const words = ['Health', 'Opportunity', 'Money', 'Career', 'Marriage', 'Business', 'Relationship'];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentWord((prevWord) => {
+        const currentIndex = words.indexOf(prevWord);
+        const nextIndex = (currentIndex + 1) % words.length;
+        return words[nextIndex];
+      });
+    }, 2000); // Change the word every 2 seconds
+
+    return () => clearInterval(intervalId);
+  }, [words]);
+
+  const animationVariants = {
+    initial: {
+      opacity: 0,
+      scale: 0.8,
+      y: 20,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.8,
+      y: -20,
+      transition: {
+        duration: 0.3,
+        ease: 'easeInOut',
+      },
+    },
+  };
 
   const contactContent = (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -117,59 +160,36 @@ const App = () => {
                       className="home__container bd-container bd-grid"
                     >
                       <div className="home__data">
-                        <h3 className="home__title">MahaVastu Santulan</h3>
-                        <h3 className="home__subtitle">The promise to prosperity</h3>
-                        <a href="/form" className="button-consult-mobile">Consult Us now</a>
-                      </div>
-                    </motion.div>
-                  </section>
-                  <CoFounders />
-                  <Divider />
-
-                  <section className="tiles-section" style={{ maxWidth: '1350px', margin: '0 auto' }}>
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: true }}
-  >
-  </motion.div>
-
-  <h2 className="section-title" style={{ paddingTop: '10px' }}>Vastu Consultation</h2>
-  <motion.div
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: true }}
-  >
-    <ImageTileContainer tiles={tiles} isMobile={isMobile} />
-  </motion.div>
-
-  <div className="parent-element">
+                      <h3 className="home__title">
+      Are You Struggling with{' '}
+      <motion.span
+        key={currentWord} // Ensure unique key for animation
+        initial={{ opacity: 0, y: 20 }} // Initial state for entering
+        animate={{ opacity: 1, y: 0 }} // Animate to visible
+        exit={{ opacity: 0, y: -20 }} // Animate out
+        transition={{ duration: 0.5 }} // Duration of the animation
+        style={{ color: '#ffb401' }} // Apply color style here
+      >
+        {currentWord}
+      </motion.span>
+      ?
+    </h3>                     <h3 className="home__subtitle">Tailored Vastu Solutions for a Healthier, Wealthier Life.</h3>
+                        <a href="/form" className="button-consult-mobile"><strong>Book appointment</strong></a>
+                        {/* <div className="parent-element">
     <Button href="/form" type="primary" shape="round" size="large" className="animated-button">
       Consult Us now
     </Button>
-  </div>
+  </div> */}
+                      </div>
+                    </motion.div>
+                    <img src={heroImage} alt="Description" className="right-image" />
 
-  <motion.div
-    initial={{ opacity: 0, x: -100 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className="vastu-solutions"
-  >
-    <h1>Unlock the Power of Positive Energy with Expert Vastu Solutions</h1>
-    <p>
-      At <strong>MahaVastu Santulan</strong>, we combine the ancient wisdom of Vastu Shastra 
-      with modern architectural expertise to help you create harmonious spaces that nurture 
-      your well-being and success. With a deep understanding of both traditional Vastu principles 
-      and contemporary design practices, our team of seasoned Vastu consultants is dedicated 
-      to transforming your living and working environments into sanctuaries of peace and prosperity.
-    </p>
-  </motion.div>
-</section>
+                  </section>
+                  <Intro/>
+                  <ImageTileContainer />
 
-                  <Divider />
+                  <CoFounders />
+                 
 
                   <Service />
 
@@ -181,8 +201,7 @@ const App = () => {
                   >
                     <CustomerReviews />
                   </motion.div>
-                  <Divider />
-
+                  <FAQ/>
                 </main>
               }
             />

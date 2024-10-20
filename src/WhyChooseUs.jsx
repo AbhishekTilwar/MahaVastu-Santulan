@@ -33,7 +33,8 @@ const WhyChooseUs = () => {
 
   return (
     <section className="why-choose-us section bd-container" id="why-choose-us" ref={sectionRef}>
-      <h2 className="section-title">Why Choose Us?</h2>
+      <h1>WHY CHOOSE US?</h1>
+
       <div className="why-choose-us__containers bd-grid">
         <div className="why-choose-us__content">
           <TeamOutlined className="why-choose-us__icon" />

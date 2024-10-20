@@ -1,75 +1,88 @@
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-  .navbar {
-    width: 100vw; /* Set to full viewport width */
-    position: fixed; /* Keep it fixed at the top */
-    left: 0; /* Align to the left */
-    z-index: var(--z-fixed); /* Ensure it appears above other content */
-  }
-
-  .navbar-menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%; /* Ensure menu takes full width */
-    padding: 1.5rem 0 1rem;
-    text-align: center;
-    background-color: var(--body-color);
-    transition: .4s;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
-    border-radius: 0 0 1rem 1rem;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .navbar-menu.show-menu {
-    top: 60px; /* Adjust this value to move it down */
-    max-height: 300px; /* Adjust based on your menu size */
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .navbar-item {
-    margin-top: 18px;
-    margin: 0.5rem 0;
-    opacity: 0;
-    transition: opacity 0.15s ease-in-out;
-    transform: 0.3s ease-in-out;
-  }
-
-  .navbar-item.show {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .navbar-menu.show-menu .navbar-item {
-    opacity: 1;
-  }
-
-  .bd-container_main {
-    max-width: 100%;
-    padding-top: 0.25rem;
-    padding-right: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .tiles-section {
-    background-color: #f9f9f9;
-  }
+/* General Styles for NavBar */
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s ease;
 }
 
-/* PC Styles */
-.navbar {
-  max-width: 1480px;
-  height: var(--header-height);
+.bd-container_main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.navbar-icon {
-  width: 40px; /* Fixed width for icons */
+/* Centering nav items for desktop view */
+.nav__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav__item {
+  margin: 0 15px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: grey;
+}
+
+/* Button centered */
+.nav__item .ant-btn {
+  margin: 0 auto;
+  display: block;
+  color: white;
+  border-color: white;
+}
+
+.theme-switcher-container {
+  margin-left: 15px;
+}
+
+/* Color change on scroll */
+.l-header.scrolled .nav__link {
+  color: grey;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav__menu {
+    display: block;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .theme-switcher-container {
+    margin: 0;
+  }
+
+  .nav__item .ant-btn {
+    text-align: center;
+    width: 100%;
+  }
 }

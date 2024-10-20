@@ -1,12 +1,21 @@
+.about-section {
+  padding: 150px 20px; /* Reduced side padding for mobile */
+  background-color: #fff; /* Ensure the background is white */
+}
+
 .reviews-container {
     max-width: 1250px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
   }
-  
+
+  h1 {
+    font-size: 1.5rem; /* Font size */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the text */
+}
+
   h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -55,11 +64,11 @@
   
   /* Add background color to the card */
   .active-review-card:nth-child(odd) {
-    background-color: #f9f9f9; /* Light grey for odd cards */
+    background-color: #ffffff; /* Light grey for odd cards */
   }
   
   .active-review-card:nth-child(even) {
-    background-color: #f9f9f9; /* Light green for even cards */
+    background-color: #ffffff; /* Light green for even cards */
   }
   
   /* Media query for mobile responsiveness */
@@ -120,15 +129,16 @@
   .floating-heart {
     position: absolute;
     font-size: 18px;
-    color: #eb2f96;
+    color: #d12336;
     animation: floatUp 1s ease-out forwards;
   }
   
   /* Adjusting the button styles */
   .button-row {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     margin-top: 20px;
+    gap: 10px;
   }
   
   .fancy-button {
@@ -188,7 +198,7 @@
   
   .floating-heart {
     position: absolute;
-    color: red;
+    color: #d12336;
     font-size: 1.5rem;
     animation: floatUp 1s ease-in-out forwards;
   }
@@ -207,4 +217,30 @@
   .like-count {
     margin-left: 8px;
   }
+  .review-header-info {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+  }
   
+  .review-date {
+    font-size: 14px;
+    margin-left: 8px; /* Adds some space between the stars and the date */
+  }
+
+  .transparent-button {
+    border: 1px solid #1890ff; /* Example color, adjust as needed */
+    background-color: transparent; /* Makes the background transparent */
+    color: #1890ff; /* Text color */
+  }
+  
+  .transparent-button:hover {
+    background-color: rgba(24, 144, 255, 0.1); /* Light blue background on hover */
+  }
+
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 1.25rem; /* Font size */
+      margin-bottom: 20px; /* Space below the heading */
+      text-align: center; /* Center the text */
+  }
+  }

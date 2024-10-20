@@ -1,64 +1,91 @@
-.cofounders-container {
-  text-align: center;
-  padding: 40px;
-  margin-bottom: -130px;   
-}  
+/* CoFounders.css */
+.about-section {
+  padding: 150px 20px; /* Reduced side padding for mobile */
+  background-color: #fff; /* Ensure the background is white */
+}
+.fixed-width-text {
+  width: 85%; /* Adjust this value as needed */
+  margin: 0 auto; /* Center the paragraph */
+  text-align: center; /* Optional: Justify the text for a neat appearance */
+}
 
-.cofounders {
-  position: relative;
-  overflow: hidden; /* Hide overflow for sliding effect */
-  height: 450px; /* Set a height for mobile mode */
+.cofounders-wrapper {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff; /* Change background color to white */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 700;
+}
+
+.cofounders-grid {
+  padding-top: 3%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .cofounder-card {
-  position: absolute;
-  top: 0;
-  left: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  max-width: 400px; /* Adjust this as necessary */
+  min-width: 280px; /* Ensure the card is not too small */
   width: 100%;
-  opacity: 0;
-  transition: opacity 2s ease, transform 2s ease;
-  transform: translateX(100%); /* Start off-screen to the right */
-}
-
-.cofounder-card.active {
-  opacity: 1;
-  transform: translateX(0); /* Slide in */
-}
-
-.cofounders.mobile .cofounder-card {
-  transition: opacity 2s ease, transform 2s ease;
+  margin: 0 auto;
 }
 
 .cofounder-image {
-  width: 35%;
-  border-radius: 50%;
+  width: 100%;
   height: auto;
+  border-radius: 10px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 
-/* Media Queries for PC size */
-@media (min-width: 768px) {
-  .cofounders-container {
-    padding-bottom: 0px; /* Set padding to 0 for mobile */
-    margin-bottom: -30px;   }
-  .cofounders {
-    display: flex;
-    justify-content: space-around;
+.cofounder-details {
+  padding: 10px 0;
+}
+
+.cofounder-name {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+  color: #333;
+}
+
+.cofounder-role {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 500;
+  word-wrap: break-word; /* Break long words properly */
+}
+
+.cofounder-bio {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .cofounders-grid {
+    display: none; /* Hide grid layout on mobile */
   }
 
   .cofounder-card {
-    position: static; /* Reset position for PC layout */
-    opacity: 1; /* Ensure opacity is 1 */
-    transform: translateX(0); /* No sliding effect */
+    margin: 0 auto;
+    max-width: 90%; /* Ensure cards fit nicely in the carousel */
   }
-
-  .cofounder-card {
-    margin: 20px;
-    padding: 20px;
-    width: 300px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
 }

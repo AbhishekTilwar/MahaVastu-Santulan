@@ -3,7 +3,7 @@
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 4rem;
-  --header-color: #A6A6A6;
+  --header-color: #d12336;
 
 
   /*========== Colors ==========*/
@@ -12,7 +12,7 @@
   --title-color: #393939;
   --text-color: #707070;
   --text-color-light: #A6A6A6;
-  --body-color: #fefefe;
+  --body-color: #FFFFFF;
   --container-color: #FFFFFF;
 
   /*========== Font and typography ==========*/
@@ -168,7 +168,7 @@ img{
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: var(--body-color);
+  background-color: #d12336;
 }
 
 
@@ -300,7 +300,8 @@ img{
 
 
 .nav__link, .nav__logo, .nav__toggle{
-  color: #333333;
+  color: #ffffff;
+  /* color: #333333; */
   font-weight: var(--font-medium);
 }
 
@@ -339,7 +340,7 @@ img{
 
 /* Active menu */
 .active-link{
-  color: #4285F4;
+  color: #ffb401;
 }
 
 /* Change background header */
@@ -392,8 +393,8 @@ img{
 }
 
 .home__subtitle{
-  font-size: var(--h1-font-size);
-  color: #FEB600;
+  font-size: var(--h3-font-size);
+  color: rgb(228, 225, 225);
   margin-bottom: var(--mb-4);
 }
 
@@ -414,11 +415,13 @@ img{
 
 .button-consult-mobile{
   display: inline-block;
-  background-color: #d12336;
-  color: #FFF;
-  padding: .75rem 1rem;
+  background-color: #ffffff;
+  color: #d12336;
+  padding: 1.0rem 2.0rem;
   border-radius: .5rem;
   transition: .3s;
+  font-size: var(--h3-font-size );
+
 }
 .button-consult-pc{
   display: none;
@@ -898,15 +901,25 @@ img{
 /* For tall screens on mobiles y desktop*/
 @media screen and (min-height: 721px) {
   .home__container {
-      height: 640px;
+      height: 780px;
   }
   .home {
     position: relative;
-    background-image: url('https://anarghyaa.com/cdn/shop/products/anarghyaa-vastu-consultation_480x480.jpg?v=1576556294');
+    /* background-image: url('https://anarghyaa.com/cdn/shop/products/anarghyaa-vastu-consultation_480x480.jpg?v=1576556294'); */
     background-size: cover;
     background-position: center;
     background-attachment: absolute; /* Optional for parallax */
-    height: 530px;
+    height: 720px;
+    background-color: #d12336
+    ;
+  }
+  .right-image {
+    position: absolute; /* Position image absolutely */
+    right: 0; /* Touch the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    max-width: 40%; /* Control image size */
+    height: auto; /* Maintain aspect ratio */
   }
   .home-contactus  {
     position: relative;
@@ -923,14 +936,14 @@ img{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency: 0.5 = 50% transparent */
+    /* background-color: rgba(0, 0, 0, 0.5); Adjust transparency: 0.5 = 50% transparent */
     z-index: 1;
   }
   
   
   
   .home__data {
-    max-width: 600px;
+    max-width: 800px;
     z-index: 2;
   }                  
 
@@ -1119,13 +1132,14 @@ img{
               margin-top: -55px; /* Adjust this value to shift it upwards */
             }
             .home {
-              padding-top: 0.1px;
+              padding-top: 20%;
               position: relative;
-              background-image: url('https://vastu-samadhan.com/wp-content/uploads/2020/02/Vastu-Shastra.gif');
+              /* background-image: url('https://vastu-samadhan.com/wp-content/uploads/2020/02/Vastu-Shastra.gif'); */
               background-size: cover;
               background-position: center;
               background-attachment: absolute; /* Optional for parallax */
-              height: 280px;
+              height: 300px;
+              background-color: #d12336;
             }
             .home-contactus {
               padding-top:90px;
@@ -1145,8 +1159,8 @@ img{
               align-content: center;
             }
             .home__subtitle{
-              font-size: var(--h2-font-size);
-              color: #FEB600;
+              font-size: var(--h3-font-size);
+              color: #f8f4f4;
               margin-bottom: var(--mb-4);
             }
             .services__description_desktop{
@@ -1415,8 +1429,7 @@ img{
 
 .bd-container-first{
   width: calc(100% - 3rem);
-  margin-top: 42%;
-
+  /* margin-top: 42%; */
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
 
@@ -1424,13 +1437,19 @@ img{
 }
 .bd-container{
   width: calc(100% - 3rem);
-  margin-top: 20%;
+  /* margin-top: 20%; */
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
 }
 
 .button-consult-mobile{
-  display: none;
+  display: inline-block;
+  background-color: #ffffff;
+  color: #d12336;
+  padding: 0.75rem 1.0rem;
+  border-radius: .5rem;
+  transition: .3s;
+  font-size: var(--h4-font-size );
 }
 .button-consult-pc{
   display: inline-block;
@@ -1452,9 +1471,10 @@ img{
 
 
 .home__title{
-  font-size: var(--biggest-font-size);
+  font-size: var(--h1-font-size);
   color: #ffffff;
   margin-bottom: var(--mb-1);
+
 }
 
 
@@ -1536,6 +1556,15 @@ img{
 @media only screen and (max-width: 768px) {
   .tile img {
     height: 200px; /* Adjust for mobile */
+  }
+  .nav__link, .nav__logo, .nav__toggle{
+    /* color: #ffffff; */
+    color: #333333;
+    font-weight: var(--font-medium);
+  }
+  .home__data{
+    max-width: 300px;
+    z-index: 2;
   }
 }
 .vastu-solutions {

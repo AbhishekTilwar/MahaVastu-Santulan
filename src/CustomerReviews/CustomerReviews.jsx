@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Form, Input, Rate, Button, Upload } from 'antd';
+import { Modal, Form, Input, Rate, Button, Upload, Radio } from 'antd';
 import { UploadOutlined, HeartTwoTone } from '@ant-design/icons';
 import './CustomerReviews.css';
 import { PlusCircleOutlined, MessageOutlined } from '@ant-design/icons';
 
 const { TextArea } = Input;
 
-const defaultAvatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&s';
+const defaultAvatarMale = 'https://bhavishyacomputereducation.in/uploads/ourteam/5/PRINCE%20GUPTA_39255120_5_T.png';
+const defaultAvatarFemale = "https://www.bhavishyacomputereducation.in/uploads/ourteam/4/AANCHAL%20SINGH_57240452_4_T.png";
 
 const initialReviews = [
   {
@@ -14,7 +15,7 @@ const initialReviews = [
     review: 'The Vastu consultation has been life-changing! I felt a positive energy shift in my home.',
     rating: 5,
     date: 'July 22, 2023',
-    avatar: defaultAvatar,
+    avatar: defaultAvatarMale,
     likes: 45,
   },
   {
@@ -22,7 +23,7 @@ const initialReviews = [
     review: 'Highly recommended! The Vastu tips were extremely useful.',
     rating: 4,
     date: 'August 15, 2023',
-    avatar: "https://i.pinimg.com/564x/b8/03/78/b80378993da7282e58b35bdd3adbce89.jpg",
+    avatar: defaultAvatarFemale,
     likes: 16,
   },
   {
@@ -30,7 +31,7 @@ const initialReviews = [
     review: 'Very insightful advice on improving energy flow at home. It made a real difference.',
     rating: 5,
     date: 'September 5, 2023',
-    avatar: 'https://wallpapers.com/images/featured/cool-profile-picture-87h46gcobjl5e4xu.jpg',
+    avatar: defaultAvatarMale,
     likes: 23,
   },
   {
@@ -38,7 +39,7 @@ const initialReviews = [
     review: 'Very insightful advice on improving energy flow at home. It made a real difference.',
     rating: 5,
     date: 'September 5, 2023',
-    avatar: 'https://wallpapers.com/images/featured/cool-profile-picture-87h46gcobjl5e4xu.jpg',
+    avatar: defaultAvatarMale,
     likes: 0,
   },
   {
@@ -46,8 +47,8 @@ const initialReviews = [
     review: 'Very insightful advice on improving energy flow at home. It made a real difference.',
     rating: 5,
     date: 'September 5, 2023',
-    avatar: 'https://wallpapers.com/images/featured/cool-profile-picture-87h46gcobjl5e4xu.jpg',
-    likes: 0,
+    avatar: defaultAvatarMale,
+    likes: 2,
   },
 ];
 
@@ -61,14 +62,18 @@ const CustomerReviews = () => {
   const [floatingHearts, setFloatingHearts] = useState({});
 
   const addReview = (values) => {
+    // Determine the default avatar based on gender selection
+    const newAvatar = values.gender === 'male' ? defaultAvatarMale : defaultAvatarFemale;
+
     const newReview = {
       name: values.name,
       review: values.review,
       rating: values.rating,
       date: new Date().toLocaleDateString(),
-      avatar: values.avatar ? values.avatar.file.thumbUrl : defaultAvatar,
+      avatar: values.avatar ? values.avatar.file.thumbUrl : newAvatar, // Use the uploaded image if present
       likes: 0,
     };
+
     setReviews([newReview, ...reviews]);
     form.resetFields();
     setIsModalVisible(false);
@@ -122,144 +127,178 @@ const CustomerReviews = () => {
     return () => clearInterval(intervalId);
   }, [reviews.length]);
 
-  return (
-    <div className="reviews-container">
-      <h2>What our Customer Says</h2>
+  // Function to format date as "X months ago"
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const monthsDiff = now.getMonth() - date.getMonth() + (12 * (now.getFullYear() - date.getFullYear()));
+    
+    return monthsDiff === 1 ? "1 month ago" : `${monthsDiff} months ago`;
+  };
 
-      {/* Display 2-3 reviews in colorful tiles */}
-      <div className="active-reviews-container">
-        {reviews.slice(0, 3).map((review, index) => (
-          <div key={index} className="active-review-card">
-            <div className="active-review-header">
-              <img src={review.avatar} alt={review.name} className="review-avatar" />
-              <div>
-                <h3>{review.name}</h3>
-                <p className="review-date">{review.date}</p>
+  return (
+    <div className='about-section'>
+      <div className="reviews-container">
+        <h1>WHAT OUR CUSTOMER SAY</h1>
+
+        {/* Display 2-3 reviews in colorful tiles */}
+        <div className="active-reviews-container">
+          {reviews.slice(0, 3).map((review, index) => (
+            <div key={index} className="active-review-card">
+              <div className="active-review-header">
+                <img src={review.avatar} alt={review.name} className="review-avatar" />
+                <div>
+                  <h3>{review.name}</h3>
+                  <span className="review-date">{formatDate(review.date)}</span>
+
+                  <div className="review-header-info">
+                    <Rate disabled value={review.rating} />
+                  </div>
+
+                </div>
+              </div>
+              <p className="review-text">"{review.review}"</p>
+
+              {/* Heart like button with flying heart animation */}
+              <div className="like-container">
+                <HeartTwoTone
+                  twoToneColor="#eb2f96"
+                  className="heart-icon"
+                  onClick={() => handleLike(index)}
+                />
+                <span className="like-count">{review.likes}</span>
+
+                {/* Floating heart animation */}
+                {floatingHearts[index] && <span className="floating-heart">❤️</span>}
               </div>
             </div>
-            <p className="review-text">"{review.review}"</p>
-            <Rate disabled value={review.rating} />
+          ))}
+        </div>
 
-            {/* Heart like button with flying heart animation */}
-            <div className="like-container">
-              <HeartTwoTone
-                twoToneColor="#eb2f96"
-                className="heart-icon"
-                onClick={() => handleLike(index)}
-              />
-              <span className="like-count">{review.likes}</span>
+        {/* Add and Show/Hide buttons in the same row */}
+        <div className="button-row">
+          {!showAll && (
+            <Button
+              className="transparent-button fancy-button" // Use the new transparent button class
+              onClick={toggleReviews}
+              icon={<MessageOutlined />}
+            >
+              Show More
+            </Button>
+          )}
+          <Button
+            type="primary"
+            onClick={showModal}
+            className="fancy-button"
+            icon={<PlusCircleOutlined />}
+          >
+            Write a Review
+          </Button>
+        </div>
 
-              {/* Floating heart animation */}
-              {floatingHearts[index] && <span className="floating-heart">❤️</span>}
-            </div>
-          </div>
-        ))}
-      </div>
+        {/* Display reviews when 'See All Comments' is clicked */}
+        {showAll && (
+          <>
+            <div className="all-reviews-container">
+              {reviews.slice(0, visibleReviews).map((review, index) => (
+                <div key={index} className="review-card">
+                  <div className="review-header">
+                    <img src={review.avatar} alt={review.name} className="review-avatar" />
+                    <div>
+                      <h3>{review.name}</h3>
+                      <div className="review-header-info">
+                        <Rate disabled value={review.rating} />
+                        <span className="review-date">{formatDate(review.date)}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="review-text">"{review.review}"</p>
+                  <div className="like-container">
+                    <HeartTwoTone
+                      twoToneColor="#eb2f96"
+                      className="heart-icon"
+                      onClick={() => handleLike(index)}
+                    />
+                    <span className="like-count">{review.likes}</span>
 
-     {/* Add and Show/Hide buttons in the same row */}
-<div className="button-row">
-  <Button
-    type="primary"
-    onClick={showModal}
-    className="fancy-button"
-    icon={<PlusCircleOutlined />}
-  >
-    Add Review
-  </Button>
-  {!showAll && (
-    <Button
-      type="default"
-      onClick={toggleReviews}
-      className="fancy-button"
-      icon={<MessageOutlined />}
-    >
-      See All Comments
-    </Button>
-  )}
-</div>
-
-
-      {/* Display reviews when 'See All Comments' is clicked */}
-      {showAll && (
-        <>
-          <div className="all-reviews-container">
-            {reviews.slice(0, visibleReviews).map((review, index) => (
-              <div key={index} className="review-card">
-                <div className="review-header">
-                  <img src={review.avatar} alt={review.name} className="review-avatar" />
-                  <div>
-                    <h3>{review.name}</h3>
-                    <p className="review-date">{review.date}</p>
+                    {/* Floating heart animation */}
+                    {floatingHearts[index] && <span className="floating-heart">❤️</span>}
                   </div>
                 </div>
-                <p className="review-text">"{review.review}"</p>
-                <Rate disabled value={review.rating} />
-                <div className="like-container">
-                  <HeartTwoTone
-                    twoToneColor="#eb2f96"
-                    className="heart-icon"
-                    onClick={() => handleLike(index)}
-                  />
-                  <span className="like-count">{review.likes}</span>
+              ))}
+              {visibleReviews < reviews.length && (
+                <Button className="load-more-button fancy-button" onClick={loadMoreReviews}>
+                  Load More Reviews
+                </Button>
+              )}
+            </div>
 
-                  {/* Floating heart animation */}
-                  {floatingHearts[index] && <span className="floating-heart">❤️</span>}
-                </div>
-              </div>
-            ))}
-            {visibleReviews < reviews.length && (
-              <Button className="load-more-button fancy-button" onClick={loadMoreReviews}>
-                Load More Reviews
+            {/* Hide reviews button below all reviews */}
+            <div className="button-container">
+              <Button className="fancy-hide-button" onClick={toggleReviews}>
+                Hide Reviews
               </Button>
-            )}
-          </div>
+            </div>
+          </>
+        )}
 
-          {/* Hide reviews button below all reviews */}
-          <div className="button-container">
-            <Button className="fancy-hide-button" onClick={toggleReviews}>
-              Hide Reviews
-            </Button>
-          </div>
-        </>
-      )}
+        {/* Modal form to add review */}
+        <Modal
+          title="Add a Review"
+          visible={isModalVisible}
+          onCancel={handleCancel}
+          footer={null}
+        >
+          <Form form={form} onFinish={addReview} layout="vertical">
+            <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter your name' }]}>
+              <Input placeholder="Enter your name" />
+            </Form.Item>
 
-      {/* Modal form to add review */}
-      <Modal
-        title="Add a Review"
-        visible={isModalVisible}
-        onCancel={handleCancel}
-        footer={null}
-      >
-        <Form form={form} onFinish={addReview} layout="vertical">
-          <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter your name' }]}>
-            <Input placeholder="Enter your name" />
-          </Form.Item>
+            <Form.Item name="gender" label="Gender" rules={[{ required: true, message: 'Please select your gender' }]}>
+              <Radio.Group>
+              <Radio value="male">Male</Radio>
+<Radio value="female">Female</Radio>
+</Radio.Group>
+</Form.Item>
 
-          <Form.Item name="review" label="Review" rules={[{ required: true, message: 'Please enter your review' }]}>
-            <TextArea rows={4} placeholder="Write your review here" />
-          </Form.Item>
+<Form.Item
+  name="review"
+  label="Review"
+  rules={[{ required: true, message: 'Please enter your review' }]}
+>
+  <TextArea rows={4} placeholder="Write your review here" />
+</Form.Item>
 
-          <Form.Item name="rating" label="Rating" rules={[{ required: true, message: 'Please give a rating' }]}>
-            <Rate />
-          </Form.Item>
+<Form.Item
+  name="rating"
+  label="Rating"
+  rules={[{ required: true, message: 'Please give a rating' }]}
+>
+  <Rate />
+</Form.Item>
 
-          <Form.Item name="avatar" label="Upload Profile Image">
-            <Upload
-              listType="picture"
-              maxCount={1}
-              beforeUpload={() => false}
-            >
-              <Button icon={<UploadOutlined />}>Upload (Optional)</Button>
-            </Upload>
-          </Form.Item>
+<Form.Item
+  name="avatar"
+  label="Upload Profile Image"
+>
+  <Upload
+    listType="picture"
+    maxCount={1}
+    beforeUpload={() => false}
+  >
+    <Button icon={<UploadOutlined />}>Upload (Optional)</Button>
+  </Upload>
+</Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Submit Review
-            </Button>
-          </Form.Item>
-        </Form>
-      </Modal>
+<Form.Item>
+  <Button type="primary" htmlType="submit">
+    Submit Review
+  </Button>
+</Form.Item>
+
+          </Form>
+        </Modal>
+      </div>
     </div>
   );
 };

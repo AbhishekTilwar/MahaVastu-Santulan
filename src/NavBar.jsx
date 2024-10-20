@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Switch } from 'antd';
+import { Switch, Button } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
-import logohead from './assets/img/logo_icon.svg'; 
+import logohead from './assets/img/main_logo.svg'; 
 import { useAnimation, motion } from 'framer-motion';
-import './App.css'
 
 const NavBar = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,41 +11,40 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   const controls = useAnimation();
   const navigate = useNavigate();
 
+  // Navigate to splash screen
   const handleClick = () => {
     navigate('/splashscreen');
   };
 
+  // Toggle menu open/close
   const toggleMenu = () => {
-    if (isMenuOpen) {
-      controls.start({ height: 0, opacity: 0 });
-    } else {
-      controls.start({ height: 'auto', opacity: 1 });
-    }
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prev => !prev);
+    controls.start({ height: isMenuOpen ? 0 : 'auto', opacity: isMenuOpen ? 0 : 1 });
   };
 
+  // Close the menu
   const closeMenu = useCallback(() => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
+    if (isMenuOpen) setIsMenuOpen(false);
   }, [isMenuOpen]);
 
+  // Handle scroll position
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
 
+  // Add and remove event listeners
   useEffect(() => {
     window.addEventListener('scroll', closeMenu);
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', closeMenu);
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isMenuOpen, closeMenu]);
 
+  // Toggle dark/light theme
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(prev => !prev);
   };
 
   return (
@@ -54,7 +52,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
       className="l-header" 
       id="header"
       style={{
-        backgroundColor: scrollPosition > 50 ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.3)',
+        backgroundColor: scrollPosition > 50 ? 'rgba(241, 187, 193, 0.5)' : '#d12336',
         transition: 'background-color 0.3s ease',
       }}
     >
@@ -68,7 +66,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
           whileTap={{ scale: 0.9 }}
           onClick={handleClick}
         >
-          <img className="logo_space" src={logohead} width="45px" alt="logo" />
+          <img className="logo_space" src={logohead} width="150px" alt="logo" />
         </motion.div>
 
         <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`} id="nav-menu">
@@ -83,9 +81,11 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               <Link to="/form" className="nav__link" onClick={closeMenu}>Consultation</Link>
             </li>
             <li className="nav__item">
-              <Link to="/contact" className="nav__link" onClick={closeMenu}>Contact Us</Link>
+              <Button type="primary" style={{ backgroundColor: 'transparent', borderColor: 'white', color: 'white' }}>
+                Contact us
+              </Button>
             </li>
-            <li className="nav__item theme-switcher-container">
+            {/* <li className="nav__item theme-switcher-container">
               <div className="theme-switcher">
                 <motion.div
                   initial={{ scale: 0.8 }}
@@ -102,7 +102,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                   />
                 </motion.div>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -131,3 +131,4 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 };
 
 export default NavBar;
+
