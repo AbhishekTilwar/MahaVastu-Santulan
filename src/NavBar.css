@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1450px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -68,6 +68,8 @@
 @media (max-width: 768px) {
   .nav__menu {
     display: block;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for mobile */
+
   }
 
   .nav__list {

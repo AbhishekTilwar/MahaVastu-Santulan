@@ -4,6 +4,7 @@ import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
 import logohead from './assets/img/main_logo.svg'; 
 import { useAnimation, motion } from 'framer-motion';
+import './NavBar.css'
 
 const NavBar = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
