@@ -6,8 +6,8 @@ import { PlusCircleOutlined, MessageOutlined } from '@ant-design/icons';
 
 const { TextArea } = Input;
 
-const defaultAvatarMale = 'https://bhavishyacomputereducation.in/uploads/ourteam/5/PRINCE%20GUPTA_39255120_5_T.png';
-const defaultAvatarFemale = "https://www.bhavishyacomputereducation.in/uploads/ourteam/4/AANCHAL%20SINGH_57240452_4_T.png";
+const defaultAvatarMale = 'https://cdn-icons-png.flaticon.com/512/4140/4140074.png';
+const defaultAvatarFemale = "https://cdn-icons-png.flaticon.com/512/6833/6833605.png";
 
 const initialReviews = [
   {
