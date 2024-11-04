@@ -14,7 +14,7 @@ const CustomFooter = () => (
         <PhoneOutlined style={{ fontSize: '24px', color: '#ffffff' }} />
       </a>
       <strong>
-        <div>+91 7020590037 / 9619414885</div>
+        <div>+91 8668563567 / 7020590037</div>
       </strong>
       <div>Contact</div>
     </div>

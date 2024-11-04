@@ -205,10 +205,8 @@ const VastuForm = () => {
       borderRadius: '5px',
       transition: '0.3s',
       height: '40px', // Set the desired height
-      lineHeight: '50px', // Adjust line height to center text vertically
     }}
     onMouseEnter={(e) => {
-      e.target.style.backgroundColor = '#FFC107';
       e.target.style.transform = 'scale(1.05)';
     }}
     onMouseLeave={(e) => {
