@@ -30,7 +30,7 @@ const AboutSection = () => {
           <div className="about-text">
             <h5 className="about-subtitle">ABOUT US</h5>
             <h2 className="about-title">
-              More than 10 Years we provide Vastu consultation service.
+            For more than 10 years, we have been providing Vastu consultation services.
             </h2>
             <p className="about-description">
               At MahaVastu Santulan, we believe that harmonious spaces lead to fulfilled lives. 
