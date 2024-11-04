@@ -36,7 +36,7 @@
 }
 
 .about-title {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 700;
   color: #000;
 
@@ -55,19 +55,30 @@
     display: flex;
     align-items: center;
     width: 100%;
+    margin-bottom: -20px;
   }
   .about-text {
-    text-align: center; /* Center text */
+    text-align: left; /* Center text */
     padding: 10px;
     margin-left: 5%;
 
   }
 
   .about-title {
-    font-size: 20px;
+    font-size: 30px;
+    margin-top: -10px;
+
     font-weight: 700;
     color: #000;
-    text-align: center; /* Left-align for larger screens */
+    text-align: left; /* Center text */
     /* margin-bottom: 20px; */
+  }
+
+  .about-subtitle {
+    color: #d12336;
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: -10px;
+    text-align: left; 
   }
 }

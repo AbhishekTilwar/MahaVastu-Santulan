@@ -6,7 +6,7 @@ import { collection, addDoc } from 'firebase/firestore'; // Firestore methods
 import './Form.css'; // Add external CSS for input styling
 import img1 from './assets/img/ele1.png';
 import img2 from './assets/img/ele2.png';
-import img3 from './assets/img/icon.png';
+import img3 from './assets/img/Group 8.png';
 import { SendOutlined } from '@ant-design/icons';
 import ImageTileContainer from './ImageTileContainer-form';
 
@@ -194,12 +194,18 @@ const VastuForm = () => {
   </Form.Item>
 
   <Form.Item>
-    <Button type="primary" htmlType="submit" block icon={<SendOutlined/>}
+  <Button
+    type="primary"
+    htmlType="submit"
+    block
+    icon={<SendOutlined />}
     style={{
       backgroundColor: '#d12336',
       borderColor: '#ffffff',
       borderRadius: '5px',
       transition: '0.3s',
+      height: '40px', // Set the desired height
+      lineHeight: '50px', // Adjust line height to center text vertically
     }}
     onMouseEnter={(e) => {
       e.target.style.backgroundColor = '#FFC107';
@@ -208,10 +214,12 @@ const VastuForm = () => {
     onMouseLeave={(e) => {
       e.target.style.backgroundColor = '#d12336';
       e.target.style.transform = 'scale(1)';
-    }}>
-      Submit
-    </Button>
-  </Form.Item>
+    }}
+  >
+    Submit
+  </Button>
+</Form.Item>
+
 </Form>
 
         </motion.div>

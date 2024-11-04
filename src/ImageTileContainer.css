@@ -67,7 +67,16 @@ margin-top: 1%;
   @media (max-width: 768px) {
     .about-section {
       padding: 100px 20px; /* Adjust padding for smaller screens */
+
     }
+    .containerr {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: left;
+      background-color: white; /* Keep the body background color white */
+    }
+    
   
     .service {
       flex: 0 0 100%; /* Each service takes full width on small screens */
@@ -75,6 +84,7 @@ margin-top: 1%;
     }
   
     h1 {
+
       font-size: 1.2rem; /* Smaller heading size for mobile */
     }
   
@@ -83,6 +93,7 @@ margin-top: 1%;
     }
   
     p {
+
       font-size: 0.9rem; /* Smaller paragraph size for mobile */
     }
   }

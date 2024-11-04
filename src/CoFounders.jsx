@@ -7,19 +7,20 @@ import Founder3 from './assets/img/Rahul.png';
 
 const cofounders = [
   {
-    name: "Devendra Padhen",
-    title: "Vastu Consultant, Architect",
-    // description: "Specializes in sustainable architecture and integrating Vastu principles.",
-    image: Founder2
-  },
-  {
-    name: "Navin Gurbani",
+    name: "Navvin Gurrbani",
     title: "Vastu Consultant, Architect",
     // description: "An expert in Vastu Shastra with over many years of experience in the field.",
     image: Founder1
   },
   {
-    name: "Rahul Kasat",
+    name: "Devendra Padhen",
+    title: "Vastu Consultant, Architect",
+    // description: "Specializes in sustainable architecture and integrating Vastu principles.",
+    image: Founder2
+  },
+
+  {
+    name: "Rahul Sham Kasat",
     title: "Vastu Consultant, Urban Designer",
     // description: "Provides consultancy services to clients looking to improve their spaces through Vastu.",
     image: Founder3

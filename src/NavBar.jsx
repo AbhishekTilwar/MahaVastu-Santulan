@@ -53,22 +53,22 @@ const NavBar = ({ darkMode, setDarkMode }) => {
       className="l-header" 
       id="header"
       style={{
-        backgroundColor: scrollPosition > 50 ? 'rgba(241, 187, 193, 0.5)' : '#d12336',
+        backgroundColor: scrollPosition > 50 ? '#d12336' : '#d12336',
         transition: 'background-color 0.3s ease',
       }}
     >
       <nav className="nav bd-container_main">
-        <motion.div
-          className="logo"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={handleClick}
-        >
-          <img className="logo_space" src={logohead} width="150px" alt="logo" />
-        </motion.div>
+      <motion.div
+  className="logo"
+  initial={{ opacity: 0, scale: 0.5 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1 }}
+  whileHover={{ scale: 1.2 }}  // Zoom in on hover
+  whileTap={{ scale: 0.8 }}    // Zoom out on tap/click
+  onClick={handleClick}
+>
+  <img className="logo_space" src={logohead} width="150px" alt="logo" />
+</motion.div>
 
         <div className={`nav__menu ${isMenuOpen ? 'show-menu' : ''}`} id="nav-menu">
           <ul className="nav__list">
@@ -76,15 +76,17 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               <Link to="/" className="nav__link active-link" onClick={closeMenu}>Home</Link>
             </li>
             <li className="nav__item">
-              <Link to="/vastu" className="nav__link" onClick={closeMenu}>Vastu</Link>
+              <Link to="/vastu" className="nav__link" onClick={closeMenu}>Blogs</Link>
             </li>
-            <li className="nav__item">
+            {/* <li className="nav__item">
               <Link to="/form" className="nav__link" onClick={closeMenu}>Consultation</Link>
-            </li>
+            </li> */}
             <li className="nav__item">
+            <Link to="/form">
               <Button type="primary" style={{ backgroundColor: 'transparent', borderColor: 'white', color: 'white' }}>
-                Contact us
+              Book appointment
               </Button>
+            </Link>
             </li>
             {/* <li className="nav__item theme-switcher-container">
               <div className="theme-switcher">
@@ -122,7 +124,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <MenuOutlined style={{ color: '#b58001' }} />
+              <MenuOutlined style={{ color: '#ffffff' }} />
             </motion.div>
           )}
         </div>

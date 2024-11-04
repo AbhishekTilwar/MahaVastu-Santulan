@@ -8,19 +8,14 @@ const VastuPage = () => {
   return (
     <div className="vastu-container">
       <header className="vastu-header">
-      <img 
-                  src={GIF} 
-                  alt="Header Image" 
-                  style={{
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'cover',
-                    objectPosition: 'top',
-                    clipPath: 'inset(0 0 10% 0)'
-                  }}
-                />
-        <h1>Vastu Shastra</h1>
-      </header>
+  <img 
+    src={GIF} 
+    alt="Header Image" 
+    className="vastu-gif"
+  />
+  <h1>Vastu Shastra</h1>
+</header>
+
       <section className="vastu-content">
         <p>
           Vastu Shastra is an ancient Indian architectural science that emphasizes the importance of harmonious living spaces. Rooted in the principles of energy flow, Vastu aims to create environments that foster health, happiness, and prosperity. By aligning your home or workspace with natural elements, you can enhance your overall well-being and success.

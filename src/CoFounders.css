@@ -2,6 +2,7 @@
 .about-section {
   padding: 150px 20px; /* Reduced side padding for mobile */
   background-color: #fff; /* Ensure the background is white */
+  margin-top: -5%;
 }
 .fixed-width-text {
   width: 85%; /* Adjust this value as needed */
@@ -68,6 +69,7 @@
 .cofounder-role {
   font-size: 1.1rem;
   color: #666;
+  margin-top: -2px;
   margin-bottom: 10px;
   font-weight: 500;
   word-wrap: break-word; /* Break long words properly */

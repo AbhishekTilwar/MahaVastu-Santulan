@@ -52,6 +52,9 @@
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
   }
+  .home__top {
+    display: none;
+  }
 }
 
 /*========== BASE ==========*/
@@ -387,21 +390,20 @@ img{
 }
 
 .home__title{
-  font-size: var(--biggest-font-size);
+  font-size: 64px;
   color: #ffffff;
   margin-bottom: var(--mb-1);
 }
 
-.home__subtitle{
-  font-size: var(--h3-font-size);
+.home__subtitle {
+  font-size: 20px; /* Set the font size to 24px */
+  font-weight: 500; /* Medium bold */
   color: rgb(228, 225, 225);
   margin-bottom: var(--mb-4);
 }
 
-.home__img{
-  width: 10000px;
-  justify-self: left;
-}
+
+
 
 /*========== BUTTONS ==========*/
 .button{
@@ -885,9 +887,7 @@ img{
 
   }
 
-  .home__img{
-    width: 500px;
-  }
+
 
   .about__container,
   .app__container{
@@ -899,7 +899,7 @@ img{
 }
 
 /* For tall screens on mobiles y desktop*/
-@media screen and (min-height: 721px) {
+@media screen and (min-height: 621px) {
   .home__container {
       height: 780px;
   }
@@ -915,7 +915,7 @@ img{
   }
   .right-image {
     position: absolute; /* Position image absolutely */
-    right: 0; /* Touch the right edge */
+    left: 100; /* Touch the right edge */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust for vertical centering */
     max-width: 40%; /* Control image size */
@@ -945,6 +945,7 @@ img{
   .home__data {
     max-width: 800px;
     z-index: 2;
+    margin-left: 8%;
   }                  
 
 }
@@ -1138,14 +1139,14 @@ img{
               background-size: cover;
               background-position: center;
               background-attachment: absolute; /* Optional for parallax */
-              height: 300px;
+              height: 600px;
               background-color: #d12336;
             }
             .home-contactus {
               padding-top:90px;
               position: relative;
               text-align: center;
-              height: 280px;
+              height: 180px;
             }
             .home-laptop {
               padding-bottom: 540px;
@@ -1446,10 +1447,11 @@ img{
   display: inline-block;
   background-color: #ffffff;
   color: #d12336;
-  padding: 0.75rem 1.0rem;
+  padding: 0.75rem 4.5rem;
   border-radius: .5rem;
   transition: .3s;
   font-size: var(--h4-font-size );
+  justify-items: center;
 }
 .button-consult-pc{
   display: inline-block;
@@ -1596,3 +1598,24 @@ img{
   }
 }
 
+
+
+.home__image {
+  width: auto;
+  max-width: 500px;
+  margin-top: 0;
+  margin-left: 7rem;
+}
+
+@media (max-width: 768px) {
+
+  .home__image {
+    display: none;
+  }
+
+  .home__top {
+    max-width: 100%;
+    margin-top: 320px;
+    justify-items: center;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'antd';
 import './Intro.css'; // Custom CSS for this section
-import IntroGIF from '../assets/img/FiveElement.gif';
+import IntroGIF from '../assets/img/introGIF.gif';
 import IntroGIF2 from '../assets/img/introGIF.gif';
 
 const AboutSection = () => {

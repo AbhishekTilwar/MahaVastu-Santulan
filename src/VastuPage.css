@@ -1,7 +1,8 @@
 .vastu-container {
-    max-width: 800px;
+   
     margin: 0 auto;
     padding: 20px;
+    margin-top: 6%;
     text-align: center;
     font-family: 'Arial', sans-serif;
   }
@@ -11,20 +12,27 @@
   }
   
   .vastu-gif {
-    width: 100%;
+    width: 55%;
     height: auto;
+    object-fit: cover;
+    object-position: top;
+    clip-path: inset(0 0 10% 0);
   }
   
+  
   .vastu-content {
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto; /* Centers the element horizontally and keeps the bottom margin */
+    width: 80%; /* Sets the width */
+    text-align: center; /* Centers the text/content inside */
   }
   
   .vastu-footer {
     margin-top: 20px;
+
   }
   
   .vastu-image {
-    width: 100%;
+    width: 30%;
     height: auto;
   }
   
@@ -33,5 +41,20 @@
     margin-top: 10px;
     padding-bottom: 45px;
 
+
   }
-  
+  @media (max-width: 768px) { /* Adjust the max-width as needed for your design */
+    .vastu-gif {
+      width: 100%; /* Full width on mobile */
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+      clip-path: inset(0 0 10% 0);
+    }
+
+    .vastu-image {
+      width: 60%;
+      height: auto;
+    }
+    
+  }
